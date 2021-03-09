@@ -10,5 +10,8 @@ Sato Specifications
 * Block time: 60 seconds
 * Retarget Algorithm: DGW
 * Instamine Protection: 1000 Blocks
+* rpc port=3333
+* p2p port=3334
+* halving every 2 years
 
 More information about Sato you can find at https://www.satoex.com/sato
