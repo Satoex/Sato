@@ -1,0 +1,22 @@
+[Unit]
+Description=Sato's distributed currency daemon
+After=network.target
+
+[Service]
+User=sato
+Group=sato
+
+Type=forking
+PIDFile=/var/lib/satod/satod.pid
+ExecStart=/usr/bin/satod -daemon -pid=/var/lib/satod/satod.pid \
+-conf=/etc/sato/sato.conf -datadir=/var/lib/satod -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

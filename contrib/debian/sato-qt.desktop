@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Sato Core
+Comment=Connect to the Sato P2P Network
+Comment[de]=Verbinde mit dem Sato peer-to-peer Netzwerk
+Comment[fr]=Sato, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Sato, eşten eşe kriptografik sanal para birimi
+Exec=sato-qt %u
+Terminal=false
+Type=Application
+Icon=sato128
+MimeType=x-scheme-handler/sato;
+Categories=Office;Finance;

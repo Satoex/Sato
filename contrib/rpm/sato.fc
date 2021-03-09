@@ -1,0 +1,8 @@
+/usr/bin/sato-cli		--	gen_context(system_u:object_r:sato_exec_t,s0)
+/usr/sbin/satod		--	gen_context(system_u:object_r:sato_exec_t,s0)
+/usr/lib(64)?/sato/satod		--	gen_context(system_u:object_r:sato_exec_t,s0)
+
+/etc/sato(/.*)?		gen_context(system_u:object_r:sato_conf_t,s0)
+/var/lib/sato(/.*)?		gen_context(system_u:object_r:sato_var_lib_t,s0)
+
+(/var)?/run/satod(/.*)?   gen_context(system_u:object_r:sato_var_run_t,s0)
