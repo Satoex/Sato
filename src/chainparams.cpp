@@ -448,9 +448,9 @@ public:
         consensus.defaultAssumeValid = uint256S("0x2e663412a0826524bb64783ca46dfadf79b4385f83deb64f6e695af23921ec9d");
 
         pchMessageStart[0] = 0x63; // S
-        pchMessageStart[1] = 0x56; // P
-        pchMessageStart[2] = 0x48; // L
-        pchMessageStart[3] = 0x61; // R
+        pchMessageStart[1] = 0x56; // A
+        pchMessageStart[2] = 0x65; // T
+        pchMessageStart[3] = 0x65; // T
         nDefaultPort = 23333;
         nPruneAfterHeight = 1000;
 		
