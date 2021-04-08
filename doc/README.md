@@ -135,10 +135,8 @@ Sato repo's [root README](https://github.com/Sato/blob/master/README.md) contain
 - [Benchmarking](https://github.com/Sato/blob/master/doc/benchmarking.md)
 
 ### Resources
-- Discuss on the [SatoTalk](https://www.satotalk.org/) forums, in the [Development & Technical Discussion board](https://www.satotalk.org/?forum=661517).
-- Discuss on chat [Discord](https://discord.gg/DUkcBst), [Telegram](https://t.me/SatoDev) or [Reddit](https://www.reddit.com/r/Sato/).
-- Find out more on the [Sato Wiki](https://sato.wiki/wiki/Sato_Wiki)
-- Visit the project home [Sato.org](https://sato.org)
+- Discuss on chat [Discord](https://discord.gg/fdpRAdKYeP)
+- Visit the project home [Satoex.com/sato](https://satoex.com/sato)
 
 ### Miscellaneous
 - [Assets Attribution](https://github.com/Sato/blob/master/doc/assets-attribution.md)
