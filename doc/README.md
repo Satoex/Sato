@@ -5,7 +5,7 @@ Setup
 ---------------------
 Sato Core is the original Sato client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sato transactions; depending on the speed of your computer and network connection, the synchronization process is typically complete in under an hour.
 
-To download compiled binaries of the Sato Core and wallet, visit the [GitHub release page](https://github.com/SatoProject/Sato/releases).
+To download compiled binaries of the Sato Core and wallet, visit the [GitHub release page](https://github.com/Satoex/Sato/releases).
 
 Running
 ---------------------
@@ -102,38 +102,37 @@ To resolve, you will need to copy libboost_system.dylib to libboost_system-mt.dy
 
 ### Need Help?
 
-- See the documentation at the [Sato Wiki](https://sato.wiki/wiki/Sato_Wiki)
+- See the documentation at the [Sato Wiki](https://github.com/Satoex/Sato/tree/master/doc)
 for help and more information.
-- Ask for help on [Discord](https://discord.gg/DUkcBst), [Telegram](https://t.me/SatoDev) or [Reddit](https://www.reddit.com/r/Sato/).
-- Ask for help on the [SatoTalk](https://www.satotalk.org/) forums, in the [Development and Technical discussion board](https://www.satotalk.org/?forum=661517).
+- Ask for help on [Discord](https://discord.gg/fdpRAdKYeP)
 
 Building from source
 ---------------------
 The following are developer notes on how to build the Sato core software on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-- [Dependencies](https://github.com/SatoProject/Sato/tree/master/doc/dependencies.md)
-- [OS X Build Notes](https://github.com/SatoProject/Sato/tree/master/doc/build-osx.md)
-- [Unix Build Notes](https://github.com/SatoProject/Sato/tree/master/doc/build-unix.md)
-- [Windows Build Notes](https://github.com/SatoProject/Sato/tree/master/doc/build-windows.md)
-- [OpenBSD Build Notes](https://github.com/SatoProject/Sato/tree/master/doc/build-openbsd.md)
-- [Gitian Building Guide](https://github.com/SatoProject/Sato/tree/master/doc/gitian-building.md)
+- [Dependencies](https://github.com/Sato/tree/master/doc/dependencies.md)
+- [OS X Build Notes](https://github.com/Sato/tree/master/doc/build-osx.md)
+- [Unix Build Notes](https://github.com/Sato/tree/master/doc/build-unix.md)
+- [Windows Build Notes](https://github.com/Sato/tree/master/doc/build-windows.md)
+- [OpenBSD Build Notes](https://github.com/Sato/tree/master/doc/build-openbsd.md)
+- [Gitian Building Guide](https://github.com/Sato/tree/master/doc/gitian-building.md)
 
 Development
 ---------------------
-Sato repo's [root README](https://github.com/SatoProject/Sato/blob/master/README.md) contains relevant information on the development process and automated testing.
+Sato repo's [root README](https://github.com/Sato/blob/master/README.md) contains relevant information on the development process and automated testing.
 
-- [Developer Notes](https://github.com/SatoProject/Sato/blob/master/doc/developer-notes.md)
-- [Release Notes](https://github.com/SatoProject/Sato/blob/master/doc/release-notes.md)
-- [Release Process](https://github.com/SatoProject/Sato/blob/master/doc/release-process.md)
+- [Developer Notes](https://github.com/Sato/blob/master/doc/developer-notes.md)
+- [Release Notes](https://github.com/Sato/blob/master/doc/release-notes.md)
+- [Release Process](https://github.com/Sato/blob/master/doc/release-process.md)
 - [Source Code Documentation (External Link)](https://dev.visucore.com/sato/doxygen/) -- 2018-05-11 -- Broken link
-- [Translation Process](https://github.com/SatoProject/Sato/blob/master/doc/translation_process.md)
-- [Translation Strings Policy](https://github.com/SatoProject/Sato/blob/master/doc/translation_strings_policy.md)
-- [Travis CI](https://github.com/SatoProject/Sato/blob/master/doc/travis-ci.md)
-- [Unauthenticated REST Interface](https://github.com/SatoProject/Sato/blob/master/doc/REST-interface.md)
-- [Shared Libraries](https://github.com/SatoProject/Sato/blob/master/doc/shared-libraries.md)
-- [BIPS](https://github.com/SatoProject/Sato/blob/master/doc/bips.md)
-- [Dnsseed Policy](https://github.com/SatoProject/Sato/blob/master/doc/dnsseed-policy.md)
-- [Benchmarking](https://github.com/SatoProject/Sato/blob/master/doc/benchmarking.md)
+- [Translation Process](https://github.com/Sato/blob/master/doc/translation_process.md)
+- [Translation Strings Policy](https://github.com/Sato/blob/master/doc/translation_strings_policy.md)
+- [Travis CI](https://github.com/Sato/blob/master/doc/travis-ci.md)
+- [Unauthenticated REST Interface](https://github.com/Sato/blob/master/doc/REST-interface.md)
+- [Shared Libraries](https://github.com/Sato/blob/master/doc/shared-libraries.md)
+- [BIPS](https://github.com/Sato/blob/master/doc/bips.md)
+- [Dnsseed Policy](https://github.com/Sato/blob/master/doc/dnsseed-policy.md)
+- [Benchmarking](https://github.com/Sato/blob/master/doc/benchmarking.md)
 
 ### Resources
 - Discuss on the [SatoTalk](https://www.satotalk.org/) forums, in the [Development & Technical Discussion board](https://www.satotalk.org/?forum=661517).
@@ -142,16 +141,16 @@ Sato repo's [root README](https://github.com/SatoProject/Sato/blob/master/README
 - Visit the project home [Sato.org](https://sato.org)
 
 ### Miscellaneous
-- [Assets Attribution](https://github.com/SatoProject/Sato/blob/master/doc/assets-attribution.md)
-- [Files](https://github.com/SatoProject/Sato/blob/master/doc/files.md)
-- [Fuzz-testing](https://github.com/SatoProject/Sato/blob/master/doc/fuzzing.md)
-- [Reduce Traffic](https://github.com/SatoProject/Sato/blob/master/doc/reduce-traffic.md)
-- [Tor Support](https://github.com/SatoProject/Sato/blob/master/doc/tor.md)
-- [Init Scripts (systemd/upstart/openrc)](https://github.com/SatoProject/Sato/blob/master/doc/init.md)
-- [ZMQ](https://github.com/SatoProject/Sato/blob/master/doc/zmq.md)
+- [Assets Attribution](https://github.com/Sato/blob/master/doc/assets-attribution.md)
+- [Files](https://github.com/Sato/blob/master/doc/files.md)
+- [Fuzz-testing](https://github.com/Sato/blob/master/doc/fuzzing.md)
+- [Reduce Traffic](https://github.com/Sato/blob/master/doc/reduce-traffic.md)
+- [Tor Support](https://github.com/Sato/blob/master/doc/tor.md)
+- [Init Scripts (systemd/upstart/openrc)](https://github.com/Sato/blob/master/doc/init.md)
+- [ZMQ](https://github.com/Sato/blob/master/doc/zmq.md)
 
 License
 ---------------------
-Distributed under the [MIT software license](https://github.com/SatoProject/Sato/blob/master/COPYING).
+Distributed under the [MIT software license](https://github.com/Sato/blob/master/COPYING).
 This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](https://www.openssl.org/). This product includes
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
