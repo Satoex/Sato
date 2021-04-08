@@ -1,7 +1,7 @@
-Sato Core version *2.4.0* is now available!!
+Sato Core version *0.0.1* is now available!!
 ==============
 
-  <https://github.com/SatoProject/Sato/releases/tag/v2.4.0>
+  <https://github.com/Satoex/sato/releases/tag/v2.4.0>
 
 
 This is a major release containing bug fixes and enhancements for all builds before it.  It is highly recommended that users 
@@ -9,11 +9,9 @@ upgrade to this version.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/SatoProject/Sato/issues>
+  <https://github.com/Satoex/sato/issues>
 
-To receive security and update notifications, please subscribe to:
 
-  <https://sato.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
