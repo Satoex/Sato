@@ -1,4 +1,4 @@
-TOR SUPPORT IN RAVEN
+TOR SUPPORT IN SATO
 ======================
 
 It is possible to run Sato as a Tor hidden service, and connect to such services.
