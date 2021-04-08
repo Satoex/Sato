@@ -1,7 +1,7 @@
 Sato Core version *1.0.0 is now available!!
 ==============
 
-  <https://github.com/Satoex/sato/releases/tag/v1.0.0
+  <https://github.com/Satoex/sato/releases/tag/1.0.0
 
 
 This is a major release containing bug fixes and enhancements for all builds before it.  It is highly recommended that users 
