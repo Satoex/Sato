@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2017-2020 The Sato Core developers
+// Copyright (c) 2021 The Sato Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -204,7 +204,8 @@ public:
         checkpointData = (CCheckpointData) {
             {
                 { 0, uint256S("0x00000018419cc48e14c5a8909e0599d4d7189439ae5a16cffb31df833f2ee0b2")},
-		    { 56565, uint256S("0x000000002362279aca6f0a6e4495f406ed00f638f5318ed9fae3adb37b5751ba")}
+		    { 56565, uint256S("0x000000002362279aca6f0a6e4495f406ed00f638f5318ed9fae3adb37b5751ba")},
+		    { 67786, uint256S("0x00000000008be3df3379c4a463b88479bd90b02e513cf12619f24e00df2c8be6")}
             }
         };
 
