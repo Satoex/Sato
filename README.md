@@ -14,4 +14,4 @@ Sato Specifications
 * p2p port=3334
 * halving every 2 years
 
-More information about Sato you can find at https://www.satoex.com/sato
+More information about Sato you can find at https://www.satonetwork.com
