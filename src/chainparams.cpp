@@ -183,7 +183,7 @@ public:
 
         vSeeds.emplace_back("173.249.40.91", false);
 		vSeeds.emplace_back("161.97.177.107", false);
-		vSeeds.emplace_back("94.52.112.227", false);
+		vSeeds.emplace_back("188.34.196.154", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122);
@@ -205,7 +205,8 @@ public:
             {
                 { 0, uint256S("0x00000018419cc48e14c5a8909e0599d4d7189439ae5a16cffb31df833f2ee0b2")},
 		    { 56565, uint256S("0x000000002362279aca6f0a6e4495f406ed00f638f5318ed9fae3adb37b5751ba")},
-		    { 67786, uint256S("0x00000000008be3df3379c4a463b88479bd90b02e513cf12619f24e00df2c8be6")}
+		    { 67786, uint256S("0x00000000008be3df3379c4a463b88479bd90b02e513cf12619f24e00df2c8be6")},
+		    { 145050, uint256S("0x000000000f1ca008c002e6a39767e5f3f1f469883bebe23df33bb211ed271b51")}
             }
         };
 
