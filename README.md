@@ -5,7 +5,7 @@ Sato Specifications
 * Ticker: SATO
 * Algorithm: KawPoW
 * Type: PoW
-* Total supply: 30 000 000 000 SATO
+* Total supply: 15 000 000 000 SATO
 * Premine: 1,500,000 SATO 0.002%
 * Block time: 60 seconds
 * Retarget Algorithm: DGW
