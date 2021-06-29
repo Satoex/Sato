@@ -181,9 +181,16 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000018419cc48e14c5a8909e0599d4d7189439ae5a16cffb31df833f2ee0b2"));
         assert(genesis.hashMerkleRoot == uint256S("0x0b22541da6ad305c4b575f99aedff3d94a049c97bbbaabc278cfa0f9e11e8488"));
 
+        vSeeds.emplace_back("seed1.satonetwork.com", false);
+        vSeeds.emplace_back("seed2.satonetwork.com", false);
+        vSeeds.emplace_back("seed3.satonetwork.com", false);
         vSeeds.emplace_back("173.249.40.91", false);
-		vSeeds.emplace_back("161.97.177.107", false);
-		vSeeds.emplace_back("188.34.196.154", false);
+	vSeeds.emplace_back("161.97.177.107", false);
+	vSeeds.emplace_back("188.34.196.154", false);
+        vSeeds.emplace_back("60.119.139.94", false);
+        vSeeds.emplace_back("217.227.150.112", false);
+        vSeeds.emplace_back("86.127.106.0", false);
+        vSeeds.emplace_back("190.2.133.225", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122);
@@ -206,7 +213,8 @@ public:
                 { 0, uint256S("0x00000018419cc48e14c5a8909e0599d4d7189439ae5a16cffb31df833f2ee0b2")},
 		    { 56565, uint256S("0x000000002362279aca6f0a6e4495f406ed00f638f5318ed9fae3adb37b5751ba")},
 		    { 67786, uint256S("0x00000000008be3df3379c4a463b88479bd90b02e513cf12619f24e00df2c8be6")},
-		    { 145050, uint256S("0x000000000f1ca008c002e6a39767e5f3f1f469883bebe23df33bb211ed271b51")}
+		    { 145050, uint256S("0x000000000f1ca008c002e6a39767e5f3f1f469883bebe23df33bb211ed271b51")},
+		    { 161645, uint256S("0x000000000f11dbc3e1bb1625b102adc8eb51ecee56cfdfac7863d56ec03aec34")}
             }
         };
 
