@@ -186,7 +186,7 @@ public:
         vSeeds.emplace_back("seed3.satonetwork.com", false);
         vSeeds.emplace_back("173.249.40.91", false);
 	vSeeds.emplace_back("161.97.177.107", false);
-	vSeeds.emplace_back("188.34.196.154", false);
+	vSeeds.emplace_back("207.244.250.197", false);
         vSeeds.emplace_back("60.119.139.94", false);
         vSeeds.emplace_back("217.227.150.112", false);
         vSeeds.emplace_back("86.127.106.0", false);
