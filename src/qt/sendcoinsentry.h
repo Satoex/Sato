@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_SENDCOINSENTRY_H
-#define RAVEN_QT_SENDCOINSENTRY_H
+#ifndef SATO_QT_SENDCOINSENTRY_H
+#define SATO_QT_SENDCOINSENTRY_H
 
 #include "walletmodel.h"
 
@@ -71,4 +71,4 @@ private:
     bool updateLabel(const QString &address);
 };
 
-#endif // RAVEN_QT_SENDCOINSENTRY_H
+#endif // SATO_QT_SENDCOINSENTRY_H

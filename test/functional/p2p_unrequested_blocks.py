@@ -69,7 +69,7 @@ from test_framework.blocktools import create_block, create_coinbase
 class AcceptBlockTest(SatoTestFramework):
     def add_options(self, parser):
         parser.add_option("--testbinary", dest="testbinary",
-                          default=os.getenv("RAVEND", "satod"),
+                          default=os.getenv("SATOD", "satod"),
                           help="satod binary to test")
 
     def set_test_params(self):

@@ -4095,7 +4095,7 @@ m4trace:build-aux/m4/l_atomic.m4:25: -1- AC_DEFUN([CHECK_ATOMIC], [
 
   AC_LANG_POP
 ])
-m4trace:build-aux/m4/sato_find_bdb48.m4:6: -1- AC_DEFUN([RAVEN_FIND_BDB48], [
+m4trace:build-aux/m4/sato_find_bdb48.m4:6: -1- AC_DEFUN([SATO_FIND_BDB48], [
   AC_ARG_VAR(BDB_CFLAGS, [C compiler flags for BerkeleyDB, bypasses autodetection])
   AC_ARG_VAR(BDB_LIBS, [Linker flags for BerkeleyDB, bypasses autodetection])
 
@@ -4140,14 +4140,14 @@ m4trace:build-aux/m4/sato_find_bdb48.m4:6: -1- AC_DEFUN([RAVEN_FIND_BDB48], [
       AC_MSG_RESULT([no])
       AC_MSG_ERROR([libdb_cxx headers missing, ]AC_PACKAGE_NAME[ requires this library for wallet functionality (--disable-wallet to disable wallet functionality)])
     elif test "x$bdb48path" = "xX"; then
-      RAVEN_SUBDIR_TO_INCLUDE(BDB_CPPFLAGS,[${bdbpath}],db_cxx)
+      SATO_SUBDIR_TO_INCLUDE(BDB_CPPFLAGS,[${bdbpath}],db_cxx)
       AC_ARG_WITH([incompatible-bdb],[AS_HELP_STRING([--with-incompatible-bdb], [allow using a bdb version other than 4.8])],[
         AC_MSG_WARN([Found Berkeley DB other than 4.8; wallets opened by this build will not be portable!])
       ],[
         AC_MSG_ERROR([Found Berkeley DB other than 4.8, required for portable wallets (--with-incompatible-bdb to ignore or --disable-wallet to disable wallet functionality)])
       ])
     else
-      RAVEN_SUBDIR_TO_INCLUDE(BDB_CPPFLAGS,[${bdb48path}],db_cxx)
+      SATO_SUBDIR_TO_INCLUDE(BDB_CPPFLAGS,[${bdb48path}],db_cxx)
       bdbpath="${bdb48path}"
     fi
   else
@@ -4169,7 +4169,7 @@ m4trace:build-aux/m4/sato_find_bdb48.m4:6: -1- AC_DEFUN([RAVEN_FIND_BDB48], [
   fi
   AC_SUBST(BDB_LIBS)
 ])
-m4trace:build-aux/m4/sato_qt.m4:8: -1- AC_DEFUN([RAVEN_QT_FAIL], [
+m4trace:build-aux/m4/sato_qt.m4:8: -1- AC_DEFUN([SATO_QT_FAIL], [
   if test "x$sato_qt_want_version" = "xauto" && test x$sato_qt_force != xyes; then
     if test x$sato_enable_qt != xno; then
       AC_MSG_WARN([$1; sato-qt frontend will not be built])
@@ -4180,7 +4180,7 @@ m4trace:build-aux/m4/sato_qt.m4:8: -1- AC_DEFUN([RAVEN_QT_FAIL], [
     AC_MSG_ERROR([$1])
   fi
 ])
-m4trace:build-aux/m4/sato_qt.m4:20: -1- AC_DEFUN([RAVEN_QT_CHECK], [
+m4trace:build-aux/m4/sato_qt.m4:20: -1- AC_DEFUN([SATO_QT_CHECK], [
   if test "x$sato_enable_qt" != "xno" && test x$sato_qt_want_version != xno; then
     true
     $1
@@ -4189,19 +4189,19 @@ m4trace:build-aux/m4/sato_qt.m4:20: -1- AC_DEFUN([RAVEN_QT_CHECK], [
     $2
   fi
 ])
-m4trace:build-aux/m4/sato_qt.m4:37: -1- AC_DEFUN([RAVEN_QT_PATH_PROGS], [
-  RAVEN_QT_CHECK([
+m4trace:build-aux/m4/sato_qt.m4:37: -1- AC_DEFUN([SATO_QT_PATH_PROGS], [
+  SATO_QT_CHECK([
     if test "x$3" != "x"; then
       AC_PATH_PROGS($1,$2,,$3)
     else
       AC_PATH_PROGS($1,$2)
     fi
     if test "x$$1" = "x" && test "x$4" != "xyes"; then
-      RAVEN_QT_FAIL([$1 not found])
+      SATO_QT_FAIL([$1 not found])
     fi
   ])
 ])
-m4trace:build-aux/m4/sato_qt.m4:54: -1- AC_DEFUN([RAVEN_QT_INIT], [
+m4trace:build-aux/m4/sato_qt.m4:54: -1- AC_DEFUN([SATO_QT_INIT], [
   dnl enable qt support
   AC_ARG_WITH([gui],
     [AS_HELP_STRING([--with-gui@<:@=no|qt4|qt5|auto@:>@],
@@ -4229,7 +4229,7 @@ m4trace:build-aux/m4/sato_qt.m4:54: -1- AC_DEFUN([RAVEN_QT_INIT], [
 
   AC_SUBST(QT_TRANSLATION_DIR,$qt_translation_path)
 ])
-m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
+m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([SATO_QT_CONFIGURE], [
   use_pkgconfig=$1
 
   if test x$use_pkgconfig = x; then
@@ -4237,9 +4237,9 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
   fi
 
   if test x$use_pkgconfig = xyes; then
-    RAVEN_QT_CHECK([_RAVEN_QT_FIND_LIBS_WITH_PKGCONFIG([$2])])
+    SATO_QT_CHECK([_SATO_QT_FIND_LIBS_WITH_PKGCONFIG([$2])])
   else
-    RAVEN_QT_CHECK([_RAVEN_QT_FIND_LIBS_WITHOUT_PKGCONFIG])
+    SATO_QT_CHECK([_SATO_QT_FIND_LIBS_WITHOUT_PKGCONFIG])
   fi
 
   dnl This is ugly and complicated. Yuck. Works as follows:
@@ -4249,17 +4249,17 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
   dnl Qt4 and Qt5. With Qt5, languages moved into core and the WindowsIntegration
   dnl plugin was added. Since we can't tell if Qt4 is static or not, it is
   dnl assumed for windows builds.
-  dnl _RAVEN_QT_CHECK_STATIC_PLUGINS does a quick link-check and appends the
+  dnl _SATO_QT_CHECK_STATIC_PLUGINS does a quick link-check and appends the
   dnl results to QT_LIBS.
-  RAVEN_QT_CHECK([
+  SATO_QT_CHECK([
   TEMP_CPPFLAGS=$CPPFLAGS
   TEMP_CXXFLAGS=$CXXFLAGS
   CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
   if test x$sato_qt_got_major_vers = x5; then
-    _RAVEN_QT_IS_STATIC
+    _SATO_QT_IS_STATIC
     if test x$sato_cv_static_qt = xyes; then
-      _RAVEN_QT_FIND_STATIC_PLUGINS
+      _SATO_QT_FIND_STATIC_PLUGINS
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
       AC_CACHE_CHECK(for Qt < 5.4, sato_cv_need_acc_widget,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
           [[#include <QtCore>]],[[
@@ -4271,26 +4271,26 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
         [sato_cv_need_acc_widget=no])
       ])
       if test "x$sato_cv_need_acc_widget" = "xyes"; then
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
       fi
-      _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)],[-lqminimal])
+      _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)],[-lqminimal])
       AC_DEFINE(QT_QPA_PLATFORM_MINIMAL, 1, [Define this symbol if the minimal qt platform exists])
       if test x$TARGET_OS = xwindows; then
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)],[-lqwindows])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)],[-lqwindows])
         AC_DEFINE(QT_QPA_PLATFORM_WINDOWS, 1, [Define this symbol if the qt platform is windows])
       elif test x$TARGET_OS = xlinux; then
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)],[-lqxcb -lxcb-static])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)],[-lqxcb -lxcb-static])
         AC_DEFINE(QT_QPA_PLATFORM_XCB, 1, [Define this symbol if the qt platform is xcb])
       elif test x$TARGET_OS = xdarwin; then
         AX_CHECK_LINK_FLAG([[-framework IOKit]],[QT_LIBS="$QT_LIBS -framework IOKit"],[AC_MSG_ERROR(could not iokit framework)])
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)],[-lqcocoa])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)],[-lqcocoa])
         AC_DEFINE(QT_QPA_PLATFORM_COCOA, 1, [Define this symbol if the qt platform is cocoa])
       fi
     fi
   else
     if test x$TARGET_OS = xwindows; then
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
-      _RAVEN_QT_CHECK_STATIC_PLUGINS([
+      _SATO_QT_CHECK_STATIC_PLUGINS([
          Q_IMPORT_PLUGIN(qcncodecs)
          Q_IMPORT_PLUGIN(qjpcodecs)
          Q_IMPORT_PLUGIN(qtwcodecs)
@@ -4310,7 +4310,7 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
   fi
 
   if test x$use_hardening != xno; then
-    RAVEN_QT_CHECK([
+    SATO_QT_CHECK([
     AC_MSG_CHECKING(whether -fPIE can be used with this Qt config)
     TEMP_CPPFLAGS=$CPPFLAGS
     TEMP_CXXFLAGS=$CXXFLAGS
@@ -4329,7 +4329,7 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
     CXXFLAGS=$TEMP_CXXFLAGS
     ])
   else
-    RAVEN_QT_CHECK([
+    SATO_QT_CHECK([
     AC_MSG_CHECKING(whether -fPIC is needed with this Qt config)
     TEMP_CPPFLAGS=$CPPFLAGS
     CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
@@ -4346,23 +4346,23 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
     ])
   fi
 
-  RAVEN_QT_PATH_PROGS([MOC], [moc-qt${sato_qt_got_major_vers} moc${sato_qt_got_major_vers} moc], $qt_bin_path)
-  RAVEN_QT_PATH_PROGS([UIC], [uic-qt${sato_qt_got_major_vers} uic${sato_qt_got_major_vers} uic], $qt_bin_path)
-  RAVEN_QT_PATH_PROGS([RCC], [rcc-qt${sato_qt_got_major_vers} rcc${sato_qt_got_major_vers} rcc], $qt_bin_path)
-  RAVEN_QT_PATH_PROGS([LRELEASE], [lrelease-qt${sato_qt_got_major_vers} lrelease${sato_qt_got_major_vers} lrelease], $qt_bin_path)
-  RAVEN_QT_PATH_PROGS([LUPDATE], [lupdate-qt${sato_qt_got_major_vers} lupdate${sato_qt_got_major_vers} lupdate],$qt_bin_path, yes)
+  SATO_QT_PATH_PROGS([MOC], [moc-qt${sato_qt_got_major_vers} moc${sato_qt_got_major_vers} moc], $qt_bin_path)
+  SATO_QT_PATH_PROGS([UIC], [uic-qt${sato_qt_got_major_vers} uic${sato_qt_got_major_vers} uic], $qt_bin_path)
+  SATO_QT_PATH_PROGS([RCC], [rcc-qt${sato_qt_got_major_vers} rcc${sato_qt_got_major_vers} rcc], $qt_bin_path)
+  SATO_QT_PATH_PROGS([LRELEASE], [lrelease-qt${sato_qt_got_major_vers} lrelease${sato_qt_got_major_vers} lrelease], $qt_bin_path)
+  SATO_QT_PATH_PROGS([LUPDATE], [lupdate-qt${sato_qt_got_major_vers} lupdate${sato_qt_got_major_vers} lupdate],$qt_bin_path, yes)
 
   MOC_DEFS='-DHAVE_CONFIG_H -I$(srcdir)'
   case $host in
     *darwin*)
-     RAVEN_QT_CHECK([
+     SATO_QT_CHECK([
        MOC_DEFS="${MOC_DEFS} -DQ_OS_MAC"
        base_frameworks="-framework Foundation -framework ApplicationServices -framework AppKit"
        AX_CHECK_LINK_FLAG([[$base_frameworks]],[QT_LIBS="$QT_LIBS $base_frameworks"],[AC_MSG_ERROR(could not find base frameworks)])
      ])
     ;;
     *mingw*)
-       RAVEN_QT_CHECK([
+       SATO_QT_CHECK([
          AX_CHECK_LINK_FLAG([[-mwindows]],[QT_LDFLAGS="$QT_LDFLAGS -mwindows"],[AC_MSG_WARN(-mwindows linker support not detected)])
        ])
   esac
@@ -4370,7 +4370,7 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
 
   dnl enable qt support
   AC_MSG_CHECKING(whether to build AC_PACKAGE_NAME GUI)
-  RAVEN_QT_CHECK([
+  SATO_QT_CHECK([
     sato_enable_qt=yes
     sato_enable_qt_test=yes
     if test x$have_qt_test = xno; then
@@ -4402,7 +4402,7 @@ m4trace:build-aux/m4/sato_qt.m4:90: -1- AC_DEFUN([RAVEN_QT_CONFIGURE], [
   AC_SUBST(QT_SELECT, qt${sato_qt_got_major_vers})
   AC_SUBST(MOC_DEFS)
 ])
-m4trace:build-aux/m4/sato_qt.m4:271: -1- AC_DEFUN([_RAVEN_QT_CHECK_QT5], [
+m4trace:build-aux/m4/sato_qt.m4:271: -1- AC_DEFUN([_SATO_QT_CHECK_QT5], [
   AC_CACHE_CHECK(for Qt 5, sato_cv_qt5,[
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
     [[#include <QtCore>]],
@@ -4416,7 +4416,7 @@ m4trace:build-aux/m4/sato_qt.m4:271: -1- AC_DEFUN([_RAVEN_QT_CHECK_QT5], [
     [sato_cv_qt5=yes],
     [sato_cv_qt5=no])
 ])])
-m4trace:build-aux/m4/sato_qt.m4:291: -1- AC_DEFUN([_RAVEN_QT_IS_STATIC], [
+m4trace:build-aux/m4/sato_qt.m4:291: -1- AC_DEFUN([_SATO_QT_IS_STATIC], [
   AC_CACHE_CHECK(for static Qt, sato_cv_static_qt,[
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
     [[#include <QtCore>]],
@@ -4434,7 +4434,7 @@ m4trace:build-aux/m4/sato_qt.m4:291: -1- AC_DEFUN([_RAVEN_QT_IS_STATIC], [
     AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol for static Qt plugins])
   fi
 ])
-m4trace:build-aux/m4/sato_qt.m4:315: -1- AC_DEFUN([_RAVEN_QT_CHECK_STATIC_PLUGINS], [
+m4trace:build-aux/m4/sato_qt.m4:315: -1- AC_DEFUN([_SATO_QT_CHECK_STATIC_PLUGINS], [
   AC_MSG_CHECKING(for static Qt plugins: $2)
   CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
   LIBS="$2 $QT_LIBS $LIBS"
@@ -4444,10 +4444,10 @@ m4trace:build-aux/m4/sato_qt.m4:315: -1- AC_DEFUN([_RAVEN_QT_CHECK_STATIC_PLUGIN
     $1]],
     [[return 0;]])],
     [AC_MSG_RESULT(yes); QT_LIBS="$2 $QT_LIBS"],
-    [AC_MSG_RESULT(no); RAVEN_QT_FAIL(Could not resolve: $2)])
+    [AC_MSG_RESULT(no); SATO_QT_FAIL(Could not resolve: $2)])
   LIBS="$CHECK_STATIC_PLUGINS_TEMP_LIBS"
 ])
-m4trace:build-aux/m4/sato_qt.m4:333: -1- AC_DEFUN([_RAVEN_QT_FIND_STATIC_PLUGINS], [
+m4trace:build-aux/m4/sato_qt.m4:333: -1- AC_DEFUN([_SATO_QT_FIND_STATIC_PLUGINS], [
   if test x$sato_qt_got_major_vers = x5; then
       if test x$qt_plugin_path != x; then
         QT_LIBS="$QT_LIBS -L$qt_plugin_path/platforms"
@@ -4480,7 +4480,7 @@ m4trace:build-aux/m4/sato_qt.m4:333: -1- AC_DEFUN([_RAVEN_QT_FIND_STATIC_PLUGINS
            [sato_cv_need_platformsupport=no])
          ])
          if test x$sato_cv_need_platformsupport = xyes; then
-           RAVEN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}PlatformSupport],[main],,RAVEN_QT_FAIL(lib$QT_LIB_PREFIXPlatformSupport not found)))
+           SATO_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}PlatformSupport],[main],,SATO_QT_FAIL(lib$QT_LIB_PREFIXPlatformSupport not found)))
          fi
        fi
      fi
@@ -4491,7 +4491,7 @@ m4trace:build-aux/m4/sato_qt.m4:333: -1- AC_DEFUN([_RAVEN_QT_FIND_STATIC_PLUGINS
     fi
   fi
 ])
-m4trace:build-aux/m4/sato_qt.m4:386: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITH_PKGCONFIG], [
+m4trace:build-aux/m4/sato_qt.m4:386: -1- AC_DEFUN([_SATO_QT_FIND_LIBS_WITH_PKGCONFIG], [
   m4_ifdef([PKG_CHECK_MODULES],[
   auto_priority_version=$1
   if test x$auto_priority_version = x; then
@@ -4506,7 +4506,7 @@ m4trace:build-aux/m4/sato_qt.m4:386: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITH_PKGC
     fi
     qt5_modules="Qt5Core Qt5Gui Qt5Network Qt5Widgets"
     qt4_modules="QtCore QtGui QtNetwork"
-    RAVEN_QT_CHECK([
+    SATO_QT_CHECK([
       if test x$sato_qt_want_version = xqt5 || ( test x$sato_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
         PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" have_qt=yes],[have_qt=no])
       elif test x$sato_qt_want_version = xqt4 || ( test x$sato_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
@@ -4523,10 +4523,10 @@ m4trace:build-aux/m4/sato_qt.m4:386: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITH_PKGC
       fi
       if test x$have_qt != xyes; then
         have_qt=no
-        RAVEN_QT_FAIL([Qt dependencies not found])
+        SATO_QT_FAIL([Qt dependencies not found])
       fi
     ])
-    RAVEN_QT_CHECK([
+    SATO_QT_CHECK([
       PKG_CHECK_MODULES([QT_TEST], [${QT_LIB_PREFIX}Test], [QT_TEST_INCLUDES="$QT_TEST_CFLAGS"; have_qt_test=yes], [have_qt_test=no])
       if test x$use_dbus != xno; then
         PKG_CHECK_MODULES([QT_DBUS], [${QT_LIB_PREFIX}DBus], [QT_DBUS_INCLUDES="$QT_DBUS_CFLAGS"; have_qt_dbus=yes], [have_qt_dbus=no])
@@ -4535,25 +4535,25 @@ m4trace:build-aux/m4/sato_qt.m4:386: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITH_PKGC
   ])
   true; dnl
 ])
-m4trace:build-aux/m4/sato_qt.m4:438: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITHOUT_PKGCONFIG], [
+m4trace:build-aux/m4/sato_qt.m4:438: -1- AC_DEFUN([_SATO_QT_FIND_LIBS_WITHOUT_PKGCONFIG], [
   TEMP_CPPFLAGS="$CPPFLAGS"
   TEMP_CXXFLAGS="$CXXFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
   TEMP_LIBS="$LIBS"
-  RAVEN_QT_CHECK([
+  SATO_QT_CHECK([
     if test x$qt_include_path != x; then
       QT_INCLUDES="-I$qt_include_path -I$qt_include_path/QtCore -I$qt_include_path/QtGui -I$qt_include_path/QtWidgets -I$qt_include_path/QtNetwork -I$qt_include_path/QtTest -I$qt_include_path/QtDBus"
       CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
     fi
   ])
 
-  RAVEN_QT_CHECK([AC_CHECK_HEADER([QtPlugin],,RAVEN_QT_FAIL(QtCore headers missing))])
-  RAVEN_QT_CHECK([AC_CHECK_HEADER([QApplication],, RAVEN_QT_FAIL(QtGui headers missing))])
-  RAVEN_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, RAVEN_QT_FAIL(QtNetwork headers missing))])
+  SATO_QT_CHECK([AC_CHECK_HEADER([QtPlugin],,SATO_QT_FAIL(QtCore headers missing))])
+  SATO_QT_CHECK([AC_CHECK_HEADER([QApplication],, SATO_QT_FAIL(QtGui headers missing))])
+  SATO_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, SATO_QT_FAIL(QtNetwork headers missing))])
 
-  RAVEN_QT_CHECK([
+  SATO_QT_CHECK([
     if test x$sato_qt_want_version = xauto; then
-      _RAVEN_QT_CHECK_QT5
+      _SATO_QT_CHECK_QT5
     fi
     if test x$sato_cv_qt5 = xyes || test x$sato_qt_want_version = xqt5; then
       QT_LIB_PREFIX=Qt5
@@ -4564,32 +4564,32 @@ m4trace:build-aux/m4/sato_qt.m4:438: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITHOUT_P
     fi
   ])
 
-  RAVEN_QT_CHECK([
+  SATO_QT_CHECK([
     LIBS=
     if test x$qt_lib_path != x; then
       LIBS="$LIBS -L$qt_lib_path"
     fi
 
     if test x$TARGET_OS = xwindows; then
-      AC_CHECK_LIB([imm32],      [main],, RAVEN_QT_FAIL(libimm32 not found))
+      AC_CHECK_LIB([imm32],      [main],, SATO_QT_FAIL(libimm32 not found))
     fi
   ])
 
-  RAVEN_QT_CHECK(AC_CHECK_LIB([z] ,[main],,AC_MSG_WARN([zlib not found. Assuming qt has it built-in])))
-  RAVEN_QT_CHECK(AC_SEARCH_LIBS([png_error] ,[qtpng png],,AC_MSG_WARN([libpng not found. Assuming qt has it built-in])))
-  RAVEN_QT_CHECK(AC_SEARCH_LIBS([jpeg_create_decompress] ,[qtjpeg jpeg],,AC_MSG_WARN([libjpeg not found. Assuming qt has it built-in])))
-  RAVEN_QT_CHECK(AC_SEARCH_LIBS([pcre16_exec], [qtpcre pcre16],,AC_MSG_WARN([libpcre16 not found. Assuming qt has it built-in])))
-  RAVEN_QT_CHECK(AC_SEARCH_LIBS([hb_ot_tags_from_script] ,[qtharfbuzzng harfbuzz],,AC_MSG_WARN([libharfbuzz not found. Assuming qt has it built-in or support is disabled])))
-  RAVEN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Core]   ,[main],,RAVEN_QT_FAIL(lib$QT_LIB_PREFIXCore not found)))
-  RAVEN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Gui]    ,[main],,RAVEN_QT_FAIL(lib$QT_LIB_PREFIXGui not found)))
-  RAVEN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Network],[main],,RAVEN_QT_FAIL(lib$QT_LIB_PREFIXNetwork not found)))
+  SATO_QT_CHECK(AC_CHECK_LIB([z] ,[main],,AC_MSG_WARN([zlib not found. Assuming qt has it built-in])))
+  SATO_QT_CHECK(AC_SEARCH_LIBS([png_error] ,[qtpng png],,AC_MSG_WARN([libpng not found. Assuming qt has it built-in])))
+  SATO_QT_CHECK(AC_SEARCH_LIBS([jpeg_create_decompress] ,[qtjpeg jpeg],,AC_MSG_WARN([libjpeg not found. Assuming qt has it built-in])))
+  SATO_QT_CHECK(AC_SEARCH_LIBS([pcre16_exec], [qtpcre pcre16],,AC_MSG_WARN([libpcre16 not found. Assuming qt has it built-in])))
+  SATO_QT_CHECK(AC_SEARCH_LIBS([hb_ot_tags_from_script] ,[qtharfbuzzng harfbuzz],,AC_MSG_WARN([libharfbuzz not found. Assuming qt has it built-in or support is disabled])))
+  SATO_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Core]   ,[main],,SATO_QT_FAIL(lib$QT_LIB_PREFIXCore not found)))
+  SATO_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Gui]    ,[main],,SATO_QT_FAIL(lib$QT_LIB_PREFIXGui not found)))
+  SATO_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Network],[main],,SATO_QT_FAIL(lib$QT_LIB_PREFIXNetwork not found)))
   if test x$sato_qt_got_major_vers = x5; then
-    RAVEN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Widgets],[main],,RAVEN_QT_FAIL(lib$QT_LIB_PREFIXWidgets not found)))
+    SATO_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Widgets],[main],,SATO_QT_FAIL(lib$QT_LIB_PREFIXWidgets not found)))
   fi
   QT_LIBS="$LIBS"
   LIBS="$TEMP_LIBS"
 
-  RAVEN_QT_CHECK([
+  SATO_QT_CHECK([
     LIBS=
     if test x$qt_lib_path != x; then
       LIBS="-L$qt_lib_path"
@@ -4611,7 +4611,7 @@ m4trace:build-aux/m4/sato_qt.m4:438: -1- AC_DEFUN([_RAVEN_QT_FIND_LIBS_WITHOUT_P
   CXXFLAGS="$TEMP_CXXFLAGS"
   LIBS="$TEMP_LIBS"
 ])
-m4trace:build-aux/m4/sato_subdir_to_include.m4:8: -1- AC_DEFUN([RAVEN_SUBDIR_TO_INCLUDE], [
+m4trace:build-aux/m4/sato_subdir_to_include.m4:8: -1- AC_DEFUN([SATO_SUBDIR_TO_INCLUDE], [
   if test "x$2" = "x"; then
     AC_MSG_RESULT([default])
   else
@@ -5119,19 +5119,19 @@ m4trace:configure.ac:716: -1- _AM_SUBST_NOTMAKE([EMBEDDED_LEVELDB_FALSE])
 m4trace:configure.ac:717: -1- m4_pattern_allow([^LEVELDB_CPPFLAGS$])
 m4trace:configure.ac:718: -1- m4_pattern_allow([^LIBLEVELDB$])
 m4trace:configure.ac:719: -1- m4_pattern_allow([^LIBMEMENV$])
-m4trace:configure.ac:723: -1- RAVEN_FIND_BDB48
+m4trace:configure.ac:723: -1- SATO_FIND_BDB48
 m4trace:configure.ac:723: -1- m4_pattern_allow([^BDB_CFLAGS$])
 m4trace:configure.ac:723: -1- m4_pattern_allow([^BDB_LIBS$])
-m4trace:configure.ac:723: -1- RAVEN_SUBDIR_TO_INCLUDE([BDB_CPPFLAGS], [${bdbpath}], [db_cxx])
-m4trace:configure.ac:723: -1- RAVEN_SUBDIR_TO_INCLUDE([BDB_CPPFLAGS], [${bdb48path}], [db_cxx])
+m4trace:configure.ac:723: -1- SATO_SUBDIR_TO_INCLUDE([BDB_CPPFLAGS], [${bdbpath}], [db_cxx])
+m4trace:configure.ac:723: -1- SATO_SUBDIR_TO_INCLUDE([BDB_CPPFLAGS], [${bdb48path}], [db_cxx])
 m4trace:configure.ac:723: -1- m4_pattern_allow([^BDB_CPPFLAGS$])
 m4trace:configure.ac:723: -1- m4_pattern_allow([^BDB_LIBS$])
-m4trace:configure.ac:735: -1- RAVEN_QT_INIT
+m4trace:configure.ac:735: -1- SATO_QT_INIT
 m4trace:configure.ac:735: -1- m4_pattern_allow([^QT_TRANSLATION_DIR$])
-m4trace:configure.ac:738: -1- RAVEN_QT_CONFIGURE([$use_pkgconfig], [qt5])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([_RAVEN_QT_FIND_LIBS_WITH_PKGCONFIG([qt5])])
-m4trace:configure.ac:738: -1- _RAVEN_QT_FIND_LIBS_WITH_PKGCONFIG([qt5])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CONFIGURE([$use_pkgconfig], [qt5])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([_SATO_QT_FIND_LIBS_WITH_PKGCONFIG([qt5])])
+m4trace:configure.ac:738: -1- _SATO_QT_FIND_LIBS_WITH_PKGCONFIG([qt5])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
       if test x$sato_qt_want_version = xqt5 || ( test x$sato_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
         PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" have_qt=yes],[have_qt=no])
       elif test x$sato_qt_want_version = xqt4 || ( test x$sato_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
@@ -5148,7 +5148,7 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
       fi
       if test x$have_qt != xyes; then
         have_qt=no
-        RAVEN_QT_FAIL([Qt dependencies not found])
+        SATO_QT_FAIL([Qt dependencies not found])
       fi
     ])
 m4trace:configure.ac:738: -1- PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" have_qt=yes], [have_qt=no])
@@ -5183,8 +5183,8 @@ m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([$qt5_modules], [pkg_cv_[]QT5_CFL
 m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([$qt5_modules], [pkg_cv_[]QT5_LIBS=`$PKG_CONFIG --[]libs "$qt5_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
 m4trace:configure.ac:738: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Qt dependencies not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Qt dependencies not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
       PKG_CHECK_MODULES([QT_TEST], [${QT_LIB_PREFIX}Test], [QT_TEST_INCLUDES="$QT_TEST_CFLAGS"; have_qt_test=yes], [have_qt_test=no])
       if test x$use_dbus != xno; then
         PKG_CHECK_MODULES([QT_DBUS], [${QT_LIB_PREFIX}DBus], [QT_DBUS_INCLUDES="$QT_DBUS_CFLAGS"; have_qt_dbus=yes], [have_qt_dbus=no])
@@ -5206,23 +5206,23 @@ m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([${QT_LIB_PREFIX}DBus], [pkg_cv_[
 m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([${QT_LIB_PREFIX}DBus], [pkg_cv_[]QT_DBUS_LIBS=`$PKG_CONFIG --[]libs "${QT_LIB_PREFIX}DBus" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
 m4trace:configure.ac:738: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([_RAVEN_QT_FIND_LIBS_WITHOUT_PKGCONFIG])
-m4trace:configure.ac:738: -1- _RAVEN_QT_FIND_LIBS_WITHOUT_PKGCONFIG
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([_SATO_QT_FIND_LIBS_WITHOUT_PKGCONFIG])
+m4trace:configure.ac:738: -1- _SATO_QT_FIND_LIBS_WITHOUT_PKGCONFIG
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test x$qt_include_path != x; then
       QT_INCLUDES="-I$qt_include_path -I$qt_include_path/QtCore -I$qt_include_path/QtGui -I$qt_include_path/QtWidgets -I$qt_include_path/QtNetwork -I$qt_include_path/QtTest -I$qt_include_path/QtDBus"
       CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
     fi
   ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([AC_CHECK_HEADER([QtPlugin],,RAVEN_QT_FAIL(QtCore headers missing))])
-m4trace:configure.ac:738: -2- RAVEN_QT_FAIL([QtCore headers missing])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([AC_CHECK_HEADER([QApplication],, RAVEN_QT_FAIL(QtGui headers missing))])
-m4trace:configure.ac:738: -2- RAVEN_QT_FAIL([QtGui headers missing])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, RAVEN_QT_FAIL(QtNetwork headers missing))])
-m4trace:configure.ac:738: -2- RAVEN_QT_FAIL([QtNetwork headers missing])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([AC_CHECK_HEADER([QtPlugin],,SATO_QT_FAIL(QtCore headers missing))])
+m4trace:configure.ac:738: -2- SATO_QT_FAIL([QtCore headers missing])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([AC_CHECK_HEADER([QApplication],, SATO_QT_FAIL(QtGui headers missing))])
+m4trace:configure.ac:738: -2- SATO_QT_FAIL([QtGui headers missing])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, SATO_QT_FAIL(QtNetwork headers missing))])
+m4trace:configure.ac:738: -2- SATO_QT_FAIL([QtNetwork headers missing])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test x$sato_qt_want_version = xauto; then
-      _RAVEN_QT_CHECK_QT5
+      _SATO_QT_CHECK_QT5
     fi
     if test x$sato_cv_qt5 = xyes || test x$sato_qt_want_version = xqt5; then
       QT_LIB_PREFIX=Qt5
@@ -5232,21 +5232,21 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
       sato_qt_got_major_vers=4
     fi
   ])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_QT5
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_QT5
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     LIBS=
     if test x$qt_lib_path != x; then
       LIBS="$LIBS -L$qt_lib_path"
     fi
 
     if test x$TARGET_OS = xwindows; then
-      AC_CHECK_LIB([imm32],      [main],, RAVEN_QT_FAIL(libimm32 not found))
+      AC_CHECK_LIB([imm32],      [main],, SATO_QT_FAIL(libimm32 not found))
     fi
   ])
-m4trace:configure.ac:738: -2- RAVEN_QT_FAIL([libimm32 not found])
+m4trace:configure.ac:738: -2- SATO_QT_FAIL([libimm32 not found])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^HAVE_LIBIMM32$])
 m4trace:configure.ac:738: -2- m4_pattern_allow([^HAVE_LIBZ_$])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_z ''_main" | $as_tr_sh`
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_z ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lz " >&5
 $as_echo_n "checking for main in -lz ... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -5290,7 +5290,7 @@ else
 $as_echo "$as_me: WARNING: zlib not found. Assuming qt has it built-in" >&2;}
 fi
 ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing png_error " >&5
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing png_error " >&5
 $as_echo_n "checking for library containing png_error ... " >&6; }
 if ${ac_cv_search_png_error_+:} false; then :
   $as_echo_n "(cached) " >&6
@@ -5349,7 +5349,7 @@ else
 $as_echo "$as_me: WARNING: libpng not found. Assuming qt has it built-in" >&2;}
 fi
 ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing jpeg_create_decompress " >&5
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing jpeg_create_decompress " >&5
 $as_echo_n "checking for library containing jpeg_create_decompress ... " >&6; }
 if ${ac_cv_search_jpeg_create_decompress_+:} false; then :
   $as_echo_n "(cached) " >&6
@@ -5408,7 +5408,7 @@ else
 $as_echo "$as_me: WARNING: libjpeg not found. Assuming qt has it built-in" >&2;}
 fi
 ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing pcre16_exec" >&5
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing pcre16_exec" >&5
 $as_echo_n "checking for library containing pcre16_exec... " >&6; }
 if ${ac_cv_search_pcre16_exec+:} false; then :
   $as_echo_n "(cached) " >&6
@@ -5467,7 +5467,7 @@ else
 $as_echo "$as_me: WARNING: libpcre16 not found. Assuming qt has it built-in" >&2;}
 fi
 ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing hb_ot_tags_from_script " >&5
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing hb_ot_tags_from_script " >&5
 $as_echo_n "checking for library containing hb_ot_tags_from_script ... " >&6; }
 if ${ac_cv_search_hb_ot_tags_from_script_+:} false; then :
   $as_echo_n "(cached) " >&6
@@ -5526,8 +5526,8 @@ else
 $as_echo "$as_me: WARNING: libharfbuzz not found. Assuming qt has it built-in or support is disabled" >&2;}
 fi
 ])
-m4trace:configure.ac:738: -3- RAVEN_QT_FAIL([lib$QT_LIB_PREFIXCore not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Core   ''_main" | $as_tr_sh`
+m4trace:configure.ac:738: -3- SATO_QT_FAIL([lib$QT_LIB_PREFIXCore not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Core   ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Core   " >&5
 $as_echo_n "checking for main in -l${QT_LIB_PREFIX}Core   ... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -5581,8 +5581,8 @@ $as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXCore not found; sato-qt frontend wil
 
 fi
 ])
-m4trace:configure.ac:738: -3- RAVEN_QT_FAIL([lib$QT_LIB_PREFIXGui not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Gui    ''_main" | $as_tr_sh`
+m4trace:configure.ac:738: -3- SATO_QT_FAIL([lib$QT_LIB_PREFIXGui not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Gui    ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Gui    " >&5
 $as_echo_n "checking for main in -l${QT_LIB_PREFIX}Gui    ... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -5636,8 +5636,8 @@ $as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXGui not found; sato-qt frontend will
 
 fi
 ])
-m4trace:configure.ac:738: -3- RAVEN_QT_FAIL([lib$QT_LIB_PREFIXNetwork not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Network''_main" | $as_tr_sh`
+m4trace:configure.ac:738: -3- SATO_QT_FAIL([lib$QT_LIB_PREFIXNetwork not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Network''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Network" >&5
 $as_echo_n "checking for main in -l${QT_LIB_PREFIX}Network... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -5691,8 +5691,8 @@ $as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXNetwork not found; sato-qt frontend 
 
 fi
 ])
-m4trace:configure.ac:738: -3- RAVEN_QT_FAIL([lib$QT_LIB_PREFIXWidgets not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Widgets''_main" | $as_tr_sh`
+m4trace:configure.ac:738: -3- SATO_QT_FAIL([lib$QT_LIB_PREFIXWidgets not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Widgets''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Widgets" >&5
 $as_echo_n "checking for main in -l${QT_LIB_PREFIX}Widgets... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -5746,7 +5746,7 @@ $as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXWidgets not found; sato-qt frontend 
 
 fi
 ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     LIBS=
     if test x$qt_lib_path != x; then
       LIBS="-L$qt_lib_path"
@@ -5764,15 +5764,15 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
       QT_DBUS_LIBS="$LIBS"
     fi
   ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
   TEMP_CPPFLAGS=$CPPFLAGS
   TEMP_CXXFLAGS=$CXXFLAGS
   CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
   if test x$sato_qt_got_major_vers = x5; then
-    _RAVEN_QT_IS_STATIC
+    _SATO_QT_IS_STATIC
     if test x$sato_cv_static_qt = xyes; then
-      _RAVEN_QT_FIND_STATIC_PLUGINS
+      _SATO_QT_FIND_STATIC_PLUGINS
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
       AC_CACHE_CHECK(for Qt < 5.4, sato_cv_need_acc_widget,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
           [[#include <QtCore>]],[[
@@ -5784,26 +5784,26 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
         [sato_cv_need_acc_widget=no])
       ])
       if test "x$sato_cv_need_acc_widget" = "xyes"; then
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
       fi
-      _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)],[-lqminimal])
+      _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)],[-lqminimal])
       AC_DEFINE(QT_QPA_PLATFORM_MINIMAL, 1, [Define this symbol if the minimal qt platform exists])
       if test x$TARGET_OS = xwindows; then
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)],[-lqwindows])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)],[-lqwindows])
         AC_DEFINE(QT_QPA_PLATFORM_WINDOWS, 1, [Define this symbol if the qt platform is windows])
       elif test x$TARGET_OS = xlinux; then
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)],[-lqxcb -lxcb-static])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)],[-lqxcb -lxcb-static])
         AC_DEFINE(QT_QPA_PLATFORM_XCB, 1, [Define this symbol if the qt platform is xcb])
       elif test x$TARGET_OS = xdarwin; then
         AX_CHECK_LINK_FLAG([[-framework IOKit]],[QT_LIBS="$QT_LIBS -framework IOKit"],[AC_MSG_ERROR(could not iokit framework)])
-        _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)],[-lqcocoa])
+        _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)],[-lqcocoa])
         AC_DEFINE(QT_QPA_PLATFORM_COCOA, 1, [Define this symbol if the qt platform is cocoa])
       fi
     fi
   else
     if test x$TARGET_OS = xwindows; then
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
-      _RAVEN_QT_CHECK_STATIC_PLUGINS([
+      _SATO_QT_CHECK_STATIC_PLUGINS([
          Q_IMPORT_PLUGIN(qcncodecs)
          Q_IMPORT_PLUGIN(qjpcodecs)
          Q_IMPORT_PLUGIN(qtwcodecs)
@@ -5815,9 +5815,9 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
   CPPFLAGS=$TEMP_CPPFLAGS
   CXXFLAGS=$TEMP_CXXFLAGS
   ])
-m4trace:configure.ac:738: -1- _RAVEN_QT_IS_STATIC
+m4trace:configure.ac:738: -1- _SATO_QT_IS_STATIC
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_STATICPLUGIN$])
-m4trace:configure.ac:738: -1- _RAVEN_QT_FIND_STATIC_PLUGINS
+m4trace:configure.ac:738: -1- _SATO_QT_FIND_STATIC_PLUGINS
 m4trace:configure.ac:738: -1- PKG_CHECK_MODULES([QTPLATFORM], [Qt5PlatformSupport], [QT_LIBS="$QTPLATFORM_LIBS $QT_LIBS"])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QTPLATFORM_CFLAGS$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QTPLATFORM_LIBS$])
@@ -5850,8 +5850,8 @@ m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([Qt5PrintSupport], [pkg_cv_[]QTPR
 m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([Qt5PrintSupport], [pkg_cv_[]QTPRINT_LIBS=`$PKG_CONFIG --[]libs "Qt5PrintSupport" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
 m4trace:configure.ac:738: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:738: -3- RAVEN_QT_FAIL([lib$QT_LIB_PREFIXPlatformSupport not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}PlatformSupport''_main" | $as_tr_sh`
+m4trace:configure.ac:738: -3- SATO_QT_FAIL([lib$QT_LIB_PREFIXPlatformSupport not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}PlatformSupport''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}PlatformSupport" >&5
 $as_echo_n "checking for main in -l${QT_LIB_PREFIX}PlatformSupport... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -5906,30 +5906,30 @@ $as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXPlatformSupport not found; sato-qt f
 fi
 ])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_STATICPLUGIN$])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Could not resolve: -lqtaccessiblewidgets])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)], [-lqminimal])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Could not resolve: -lqminimal])
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Could not resolve: -lqtaccessiblewidgets])
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)], [-lqminimal])
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Could not resolve: -lqminimal])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_QPA_PLATFORM_MINIMAL$])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)], [-lqwindows])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Could not resolve: -lqwindows])
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)], [-lqwindows])
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Could not resolve: -lqwindows])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_QPA_PLATFORM_WINDOWS$])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)], [-lqxcb -lxcb-static])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Could not resolve: -lqxcb -lxcb-static])
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)], [-lqxcb -lxcb-static])
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Could not resolve: -lqxcb -lxcb-static])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_QPA_PLATFORM_XCB$])
 m4trace:configure.ac:738: -1- AX_CHECK_LINK_FLAG([[-framework IOKit]], [QT_LIBS="$QT_LIBS -framework IOKit"], [AC_MSG_ERROR(could not iokit framework)])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)], [-lqcocoa])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Could not resolve: -lqcocoa])
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)], [-lqcocoa])
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Could not resolve: -lqcocoa])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_QPA_PLATFORM_COCOA$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^QT_STATICPLUGIN$])
-m4trace:configure.ac:738: -1- _RAVEN_QT_CHECK_STATIC_PLUGINS([
+m4trace:configure.ac:738: -1- _SATO_QT_CHECK_STATIC_PLUGINS([
          Q_IMPORT_PLUGIN(qcncodecs)
          Q_IMPORT_PLUGIN(qjpcodecs)
          Q_IMPORT_PLUGIN(qtwcodecs)
          Q_IMPORT_PLUGIN(qkrcodecs)
          Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([Could not resolve: -lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([Could not resolve: -lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     AC_MSG_CHECKING(whether -fPIE can be used with this Qt config)
     TEMP_CPPFLAGS=$CPPFLAGS
     TEMP_CXXFLAGS=$CXXFLAGS
@@ -5947,7 +5947,7 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
     CPPFLAGS=$TEMP_CPPFLAGS
     CXXFLAGS=$TEMP_CXXFLAGS
     ])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     AC_MSG_CHECKING(whether -fPIC is needed with this Qt config)
     TEMP_CPPFLAGS=$CPPFLAGS
     CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
@@ -5962,87 +5962,87 @@ m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
     )
     CPPFLAGS=$TEMP_CPPFLAGS
     ])
-m4trace:configure.ac:738: -1- RAVEN_QT_PATH_PROGS([MOC], [moc-qt${sato_qt_got_major_vers} moc${sato_qt_got_major_vers} moc], [$qt_bin_path])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_PATH_PROGS([MOC], [moc-qt${sato_qt_got_major_vers} moc${sato_qt_got_major_vers} moc], [$qt_bin_path])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test "x$qt_bin_path" != "x"; then
       AC_PATH_PROGS(MOC,moc-qt${sato_qt_got_major_vers} moc${sato_qt_got_major_vers} moc,,$qt_bin_path)
     else
       AC_PATH_PROGS(MOC,moc-qt${sato_qt_got_major_vers} moc${sato_qt_got_major_vers} moc)
     fi
     if test "x$MOC" = "x" && test "x" != "xyes"; then
-      RAVEN_QT_FAIL([MOC not found])
+      SATO_QT_FAIL([MOC not found])
     fi
   ])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^MOC$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^MOC$])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([MOC not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_PATH_PROGS([UIC], [uic-qt${sato_qt_got_major_vers} uic${sato_qt_got_major_vers} uic], [$qt_bin_path])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([MOC not found])
+m4trace:configure.ac:738: -1- SATO_QT_PATH_PROGS([UIC], [uic-qt${sato_qt_got_major_vers} uic${sato_qt_got_major_vers} uic], [$qt_bin_path])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test "x$qt_bin_path" != "x"; then
       AC_PATH_PROGS(UIC,uic-qt${sato_qt_got_major_vers} uic${sato_qt_got_major_vers} uic,,$qt_bin_path)
     else
       AC_PATH_PROGS(UIC,uic-qt${sato_qt_got_major_vers} uic${sato_qt_got_major_vers} uic)
     fi
     if test "x$UIC" = "x" && test "x" != "xyes"; then
-      RAVEN_QT_FAIL([UIC not found])
+      SATO_QT_FAIL([UIC not found])
     fi
   ])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^UIC$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^UIC$])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([UIC not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_PATH_PROGS([RCC], [rcc-qt${sato_qt_got_major_vers} rcc${sato_qt_got_major_vers} rcc], [$qt_bin_path])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([UIC not found])
+m4trace:configure.ac:738: -1- SATO_QT_PATH_PROGS([RCC], [rcc-qt${sato_qt_got_major_vers} rcc${sato_qt_got_major_vers} rcc], [$qt_bin_path])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test "x$qt_bin_path" != "x"; then
       AC_PATH_PROGS(RCC,rcc-qt${sato_qt_got_major_vers} rcc${sato_qt_got_major_vers} rcc,,$qt_bin_path)
     else
       AC_PATH_PROGS(RCC,rcc-qt${sato_qt_got_major_vers} rcc${sato_qt_got_major_vers} rcc)
     fi
     if test "x$RCC" = "x" && test "x" != "xyes"; then
-      RAVEN_QT_FAIL([RCC not found])
+      SATO_QT_FAIL([RCC not found])
     fi
   ])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^RCC$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^RCC$])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([RCC not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_PATH_PROGS([LRELEASE], [lrelease-qt${sato_qt_got_major_vers} lrelease${sato_qt_got_major_vers} lrelease], [$qt_bin_path])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([RCC not found])
+m4trace:configure.ac:738: -1- SATO_QT_PATH_PROGS([LRELEASE], [lrelease-qt${sato_qt_got_major_vers} lrelease${sato_qt_got_major_vers} lrelease], [$qt_bin_path])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test "x$qt_bin_path" != "x"; then
       AC_PATH_PROGS(LRELEASE,lrelease-qt${sato_qt_got_major_vers} lrelease${sato_qt_got_major_vers} lrelease,,$qt_bin_path)
     else
       AC_PATH_PROGS(LRELEASE,lrelease-qt${sato_qt_got_major_vers} lrelease${sato_qt_got_major_vers} lrelease)
     fi
     if test "x$LRELEASE" = "x" && test "x" != "xyes"; then
-      RAVEN_QT_FAIL([LRELEASE not found])
+      SATO_QT_FAIL([LRELEASE not found])
     fi
   ])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^LRELEASE$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^LRELEASE$])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([LRELEASE not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_PATH_PROGS([LUPDATE], [lupdate-qt${sato_qt_got_major_vers} lupdate${sato_qt_got_major_vers} lupdate], [$qt_bin_path], [yes])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([LRELEASE not found])
+m4trace:configure.ac:738: -1- SATO_QT_PATH_PROGS([LUPDATE], [lupdate-qt${sato_qt_got_major_vers} lupdate${sato_qt_got_major_vers} lupdate], [$qt_bin_path], [yes])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     if test "x$qt_bin_path" != "x"; then
       AC_PATH_PROGS(LUPDATE,lupdate-qt${sato_qt_got_major_vers} lupdate${sato_qt_got_major_vers} lupdate,,$qt_bin_path)
     else
       AC_PATH_PROGS(LUPDATE,lupdate-qt${sato_qt_got_major_vers} lupdate${sato_qt_got_major_vers} lupdate)
     fi
     if test "x$LUPDATE" = "x" && test "xyes" != "xyes"; then
-      RAVEN_QT_FAIL([LUPDATE not found])
+      SATO_QT_FAIL([LUPDATE not found])
     fi
   ])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^LUPDATE$])
 m4trace:configure.ac:738: -1- m4_pattern_allow([^LUPDATE$])
-m4trace:configure.ac:738: -1- RAVEN_QT_FAIL([LUPDATE not found])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_FAIL([LUPDATE not found])
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
        MOC_DEFS="${MOC_DEFS} -DQ_OS_MAC"
        base_frameworks="-framework Foundation -framework ApplicationServices -framework AppKit"
        AX_CHECK_LINK_FLAG([[$base_frameworks]],[QT_LIBS="$QT_LIBS $base_frameworks"],[AC_MSG_ERROR(could not find base frameworks)])
      ])
 m4trace:configure.ac:738: -1- AX_CHECK_LINK_FLAG([[$base_frameworks]], [QT_LIBS="$QT_LIBS $base_frameworks"], [AC_MSG_ERROR(could not find base frameworks)])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
          AX_CHECK_LINK_FLAG([[-mwindows]],[QT_LDFLAGS="$QT_LDFLAGS -mwindows"],[AC_MSG_WARN(-mwindows linker support not detected)])
        ])
 m4trace:configure.ac:738: -1- AX_CHECK_LINK_FLAG([[-mwindows]], [QT_LDFLAGS="$QT_LDFLAGS -mwindows"], [AC_MSG_WARN(-mwindows linker support not detected)])
-m4trace:configure.ac:738: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:738: -1- SATO_QT_CHECK([
     sato_enable_qt=yes
     sato_enable_qt_test=yes
     if test x$have_qt_test = xno; then
@@ -6128,8 +6128,8 @@ m4trace:configure.ac:917: -1- PKG_CHECK_EXISTS([libcrypto], [pkg_cv_[]CRYPTO_CFL
 m4trace:configure.ac:917: -1- PKG_CHECK_EXISTS([libcrypto], [pkg_cv_[]CRYPTO_LIBS=`$PKG_CONFIG --[]libs "libcrypto" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
 m4trace:configure.ac:917: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:917: -1- RAVEN_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [RAVEN_QT_FAIL(libprotobuf not found)])])
-m4trace:configure.ac:917: -1- PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [RAVEN_QT_FAIL(libprotobuf not found)])
+m4trace:configure.ac:917: -1- SATO_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [SATO_QT_FAIL(libprotobuf not found)])])
+m4trace:configure.ac:917: -1- PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [SATO_QT_FAIL(libprotobuf not found)])
 m4trace:configure.ac:917: -1- m4_pattern_allow([^PROTOBUF_CFLAGS$])
 m4trace:configure.ac:917: -1- m4_pattern_allow([^PROTOBUF_LIBS$])
 m4trace:configure.ac:917: -1- PKG_CHECK_EXISTS([protobuf], [pkg_cv_[]PROTOBUF_CFLAGS=`$PKG_CONFIG --[]cflags "protobuf" 2>/dev/null`
@@ -6137,9 +6137,9 @@ m4trace:configure.ac:917: -1- PKG_CHECK_EXISTS([protobuf], [pkg_cv_[]PROTOBUF_CF
 m4trace:configure.ac:917: -1- PKG_CHECK_EXISTS([protobuf], [pkg_cv_[]PROTOBUF_LIBS=`$PKG_CONFIG --[]libs "protobuf" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
 m4trace:configure.ac:917: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:917: -1- RAVEN_QT_FAIL([libprotobuf not found])
-m4trace:configure.ac:917: -1- RAVEN_QT_FAIL([libprotobuf not found])
-m4trace:configure.ac:917: -1- RAVEN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+m4trace:configure.ac:917: -1- SATO_QT_FAIL([libprotobuf not found])
+m4trace:configure.ac:917: -1- SATO_QT_FAIL([libprotobuf not found])
+m4trace:configure.ac:917: -1- SATO_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
 m4trace:configure.ac:917: -1- PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])
 m4trace:configure.ac:917: -1- m4_pattern_allow([^QR_CFLAGS$])
 m4trace:configure.ac:917: -1- m4_pattern_allow([^QR_LIBS$])
@@ -6182,8 +6182,8 @@ m4trace:configure.ac:960: -1- m4_pattern_allow([^ENABLE_ZMQ$])
 m4trace:configure.ac:960: -1- m4_pattern_allow([^ENABLE_ZMQ$])
 m4trace:configure.ac:965: -1- m4_pattern_allow([^ENABLE_ZMQ$])
 m4trace:configure.ac:970: -1- m4_pattern_allow([^ENABLE_ZMQ$])
-m4trace:configure.ac:982: -3- RAVEN_QT_FAIL([libprotobuf not found])
-m4trace:configure.ac:982: -1- RAVEN_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_protobuf ''_main" | $as_tr_sh`
+m4trace:configure.ac:982: -3- SATO_QT_FAIL([libprotobuf not found])
+m4trace:configure.ac:982: -1- SATO_QT_CHECK([as_ac_Lib=`$as_echo "ac_cv_lib_protobuf ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lprotobuf " >&5
 $as_echo_n "checking for main in -lprotobuf ... " >&6; }
 if eval \${$as_ac_Lib+:} false; then :
@@ -6232,8 +6232,8 @@ $as_echo "$as_me: WARNING: libprotobuf not found; sato-qt frontend will not be b
 
 fi
 ])
-m4trace:configure.ac:984: -1- RAVEN_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
-m4trace:configure.ac:985: -1- RAVEN_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
+m4trace:configure.ac:984: -1- SATO_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
+m4trace:configure.ac:985: -1- SATO_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
 m4trace:configure.ac:991: -1- m4_pattern_allow([^HAVE_DECL_EVP_MD_CTX_NEW$])
 m4trace:configure.ac:1008: -1- PKG_CHECK_MODULES([UNIVALUE], [libunivalue], [found_univalue=yes], [true])
 m4trace:configure.ac:1008: -1- m4_pattern_allow([^UNIVALUE_CFLAGS$])
@@ -6250,40 +6250,40 @@ m4trace:configure.ac:1040: -1- _AM_SUBST_NOTMAKE([EMBEDDED_UNIVALUE_TRUE])
 m4trace:configure.ac:1040: -1- _AM_SUBST_NOTMAKE([EMBEDDED_UNIVALUE_FALSE])
 m4trace:configure.ac:1041: -1- m4_pattern_allow([^UNIVALUE_CFLAGS$])
 m4trace:configure.ac:1042: -1- m4_pattern_allow([^UNIVALUE_LIBS$])
-m4trace:configure.ac:1044: -1- RAVEN_QT_PATH_PROGS([PROTOC], [protoc], [$protoc_bin_path])
-m4trace:configure.ac:1044: -1- RAVEN_QT_CHECK([
+m4trace:configure.ac:1044: -1- SATO_QT_PATH_PROGS([PROTOC], [protoc], [$protoc_bin_path])
+m4trace:configure.ac:1044: -1- SATO_QT_CHECK([
     if test "x$protoc_bin_path" != "x"; then
       AC_PATH_PROGS(PROTOC,protoc,,$protoc_bin_path)
     else
       AC_PATH_PROGS(PROTOC,protoc)
     fi
     if test "x$PROTOC" = "x" && test "x" != "xyes"; then
-      RAVEN_QT_FAIL([PROTOC not found])
+      SATO_QT_FAIL([PROTOC not found])
     fi
   ])
 m4trace:configure.ac:1044: -1- m4_pattern_allow([^PROTOC$])
 m4trace:configure.ac:1044: -1- m4_pattern_allow([^PROTOC$])
-m4trace:configure.ac:1044: -1- RAVEN_QT_FAIL([PROTOC not found])
-m4trace:configure.ac:1047: -1- AM_CONDITIONAL([BUILD_RAVEND], [test x$build_satod = xyes])
-m4trace:configure.ac:1047: -1- m4_pattern_allow([^BUILD_RAVEND_TRUE$])
-m4trace:configure.ac:1047: -1- m4_pattern_allow([^BUILD_RAVEND_FALSE$])
-m4trace:configure.ac:1047: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEND_TRUE])
-m4trace:configure.ac:1047: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEND_FALSE])
-m4trace:configure.ac:1051: -1- AM_CONDITIONAL([BUILD_RAVEN_CLI], [test x$build_sato_cli = xyes])
-m4trace:configure.ac:1051: -1- m4_pattern_allow([^BUILD_RAVEN_CLI_TRUE$])
-m4trace:configure.ac:1051: -1- m4_pattern_allow([^BUILD_RAVEN_CLI_FALSE$])
-m4trace:configure.ac:1051: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEN_CLI_TRUE])
-m4trace:configure.ac:1051: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEN_CLI_FALSE])
-m4trace:configure.ac:1055: -1- AM_CONDITIONAL([BUILD_RAVEN_TX], [test x$build_sato_tx = xyes])
-m4trace:configure.ac:1055: -1- m4_pattern_allow([^BUILD_RAVEN_TX_TRUE$])
-m4trace:configure.ac:1055: -1- m4_pattern_allow([^BUILD_RAVEN_TX_FALSE$])
-m4trace:configure.ac:1055: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEN_TX_TRUE])
-m4trace:configure.ac:1055: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEN_TX_FALSE])
-m4trace:configure.ac:1059: -1- AM_CONDITIONAL([BUILD_RAVEN_LIBS], [test x$build_sato_libs = xyes])
-m4trace:configure.ac:1059: -1- m4_pattern_allow([^BUILD_RAVEN_LIBS_TRUE$])
-m4trace:configure.ac:1059: -1- m4_pattern_allow([^BUILD_RAVEN_LIBS_FALSE$])
-m4trace:configure.ac:1059: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEN_LIBS_TRUE])
-m4trace:configure.ac:1059: -1- _AM_SUBST_NOTMAKE([BUILD_RAVEN_LIBS_FALSE])
+m4trace:configure.ac:1044: -1- SATO_QT_FAIL([PROTOC not found])
+m4trace:configure.ac:1047: -1- AM_CONDITIONAL([BUILD_SATOD], [test x$build_satod = xyes])
+m4trace:configure.ac:1047: -1- m4_pattern_allow([^BUILD_SATOD_TRUE$])
+m4trace:configure.ac:1047: -1- m4_pattern_allow([^BUILD_SATOD_FALSE$])
+m4trace:configure.ac:1047: -1- _AM_SUBST_NOTMAKE([BUILD_SATOD_TRUE])
+m4trace:configure.ac:1047: -1- _AM_SUBST_NOTMAKE([BUILD_SATOD_FALSE])
+m4trace:configure.ac:1051: -1- AM_CONDITIONAL([BUILD_SATO_CLI], [test x$build_sato_cli = xyes])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^BUILD_SATO_CLI_TRUE$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^BUILD_SATO_CLI_FALSE$])
+m4trace:configure.ac:1051: -1- _AM_SUBST_NOTMAKE([BUILD_SATO_CLI_TRUE])
+m4trace:configure.ac:1051: -1- _AM_SUBST_NOTMAKE([BUILD_SATO_CLI_FALSE])
+m4trace:configure.ac:1055: -1- AM_CONDITIONAL([BUILD_SATO_TX], [test x$build_sato_tx = xyes])
+m4trace:configure.ac:1055: -1- m4_pattern_allow([^BUILD_SATO_TX_TRUE$])
+m4trace:configure.ac:1055: -1- m4_pattern_allow([^BUILD_SATO_TX_FALSE$])
+m4trace:configure.ac:1055: -1- _AM_SUBST_NOTMAKE([BUILD_SATO_TX_TRUE])
+m4trace:configure.ac:1055: -1- _AM_SUBST_NOTMAKE([BUILD_SATO_TX_FALSE])
+m4trace:configure.ac:1059: -1- AM_CONDITIONAL([BUILD_SATO_LIBS], [test x$build_sato_libs = xyes])
+m4trace:configure.ac:1059: -1- m4_pattern_allow([^BUILD_SATO_LIBS_TRUE$])
+m4trace:configure.ac:1059: -1- m4_pattern_allow([^BUILD_SATO_LIBS_FALSE$])
+m4trace:configure.ac:1059: -1- _AM_SUBST_NOTMAKE([BUILD_SATO_LIBS_TRUE])
+m4trace:configure.ac:1059: -1- _AM_SUBST_NOTMAKE([BUILD_SATO_LIBS_FALSE])
 m4trace:configure.ac:1061: -1- m4_pattern_allow([^HAVE_CONSENSUS_LIB$])
 m4trace:configure.ac:1084: -1- AX_CHECK_PREPROC_FLAG([-Qunused-arguments], [CPPFLAGS="-Qunused-arguments $CPPFLAGS"])
 m4trace:configure.ac:1091: -1- m4_pattern_allow([^ENABLE_WALLET$])
@@ -6383,10 +6383,10 @@ m4trace:configure.ac:1216: -1- m4_pattern_allow([^COPYRIGHT_YEAR$])
 m4trace:configure.ac:1217: -1- m4_pattern_allow([^COPYRIGHT_HOLDERS$])
 m4trace:configure.ac:1218: -1- m4_pattern_allow([^COPYRIGHT_HOLDERS_SUBSTITUTION$])
 m4trace:configure.ac:1219: -1- m4_pattern_allow([^COPYRIGHT_HOLDERS_FINAL$])
-m4trace:configure.ac:1220: -1- m4_pattern_allow([^RAVEN_DAEMON_NAME$])
-m4trace:configure.ac:1221: -1- m4_pattern_allow([^RAVEN_GUI_NAME$])
-m4trace:configure.ac:1222: -1- m4_pattern_allow([^RAVEN_CLI_NAME$])
-m4trace:configure.ac:1223: -1- m4_pattern_allow([^RAVEN_TX_NAME$])
+m4trace:configure.ac:1220: -1- m4_pattern_allow([^SATO_DAEMON_NAME$])
+m4trace:configure.ac:1221: -1- m4_pattern_allow([^SATO_GUI_NAME$])
+m4trace:configure.ac:1222: -1- m4_pattern_allow([^SATO_CLI_NAME$])
+m4trace:configure.ac:1223: -1- m4_pattern_allow([^SATO_TX_NAME$])
 m4trace:configure.ac:1225: -1- m4_pattern_allow([^RELDFLAGS$])
 m4trace:configure.ac:1226: -1- m4_pattern_allow([^COMPAT_LDFLAGS$])
 m4trace:configure.ac:1227: -1- m4_pattern_allow([^ERROR_CXXFLAGS$])

@@ -1,9 +1,9 @@
 qt/qt_libsatoqt_a-moc_intro.o: qt/moc_intro.cpp qt/intro.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/QDialog \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qdialog.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qwidget.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobal.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/QDialog \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qdialog.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qwidget.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobal.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstddef \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -17,11 +17,11 @@ qt/qt_libsatoqt_a-moc_intro.o: qt/moc_intro.cpp qt/intro.h \
  /usr/share/mingw-w64/include/vadefs.h \
  /usr/share/mingw-w64/include/sdks/_mingw_directx.h \
  /usr/share/mingw-w64/include/sdks/_mingw_ddk.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qconfig.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qfeatures.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsystemdetection.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qprocessordetection.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qcompilerdetection.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qconfig.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qfeatures.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsystemdetection.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qprocessordetection.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qcompilerdetection.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/utility \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_relops.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_pair.h \
@@ -70,34 +70,34 @@ qt/qt_libsatoqt_a-moc_intro.o: qt/moc_intro.cpp qt/intro.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/memoryfwd.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/uniform_int_dist.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/limits \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypeinfo.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypetraits.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qisenum.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsysinfo.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qlogging.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qflags.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qbasicatomic.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic_cxx11.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qgenericatomic.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypeinfo.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypetraits.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qisenum.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsysinfo.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qlogging.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qflags.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qbasicatomic.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic_cxx11.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qgenericatomic.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/atomic \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_base.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdint.h \
  /usr/share/mingw-w64/include/stdint.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_lockfree_defines.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobalstatic.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qnumeric.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qversiontagging.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qnamespace.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs_impl.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs_win.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qstring.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qchar.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearray.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qrefcount.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qarraydata.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobalstatic.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qnumeric.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qversiontagging.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qnamespace.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs_impl.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs_win.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qstring.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qchar.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearray.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qrefcount.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qarraydata.h \
  /usr/share/mingw-w64/include/string.h \
  /usr/share/mingw-w64/include/sec_api/string_s.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdarg.h \
@@ -177,11 +177,11 @@ qt/qt_libsatoqt_a-moc_intro.o: qt/moc_intro.cpp qt/intro.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/istream \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/istream.tcc \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stream_iterator.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qlist.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qalgorithms.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qiterator.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qhashfunctions.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qpair.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qlist.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qalgorithms.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qiterator.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qhashfunctions.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qpair.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/numeric \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_numeric.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/list \
@@ -189,14 +189,14 @@ qt/qt_libsatoqt_a-moc_intro.o: qt/moc_intro.cpp qt/intro.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/allocated_ptr.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/aligned_buffer.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/list.tcc \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearraylist.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringlist.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qregexp.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringmatcher.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qscopedpointer.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qmetatype.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qvarlengtharray.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qcontainerfwd.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearraylist.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringlist.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qregexp.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringmatcher.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qscopedpointer.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qmetatype.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qvarlengtharray.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qcontainerfwd.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/vector \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_uninitialized.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_vector.h \
@@ -210,55 +210,55 @@ qt/qt_libsatoqt_a-moc_intro.o: qt/moc_intro.cpp qt/intro.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/uses_allocator.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/invoke.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject_impl.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qmargins.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpaintdevice.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qrect.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsize.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qpoint.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpalette.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qcolor.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgb.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgba64.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qbrush.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qvector.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qmatrix.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpolygon.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qregion.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qdatastream.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qiodevice.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qline.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qtransform.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpainterpath.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qimage.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixelformat.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixmap.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qshareddata.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer_impl.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qfont.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontmetrics.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontinfo.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qsizepolicy.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qcursor.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qkeysequence.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/QMutex \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qmutex.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/QThread \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qthread.h
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject_impl.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qmargins.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpaintdevice.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qrect.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsize.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qpoint.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpalette.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qcolor.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgb.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgba64.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qbrush.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qvector.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qmatrix.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpolygon.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qregion.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qdatastream.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qiodevice.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qline.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qtransform.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpainterpath.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qimage.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixelformat.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixmap.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qshareddata.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer_impl.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qfont.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontmetrics.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontinfo.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qsizepolicy.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qcursor.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qkeysequence.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/QMutex \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qmutex.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/QThread \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qthread.h
 
 qt/intro.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/QDialog:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/QDialog:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qdialog.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qdialog.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qwidget.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qwidget.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobal.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobal.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstddef:
 
@@ -286,15 +286,15 @@ qt/intro.h:
 
 /usr/share/mingw-w64/include/sdks/_mingw_ddk.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qconfig.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qconfig.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qfeatures.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qfeatures.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsystemdetection.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsystemdetection.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qprocessordetection.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qprocessordetection.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qcompilerdetection.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qcompilerdetection.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/utility:
 
@@ -392,25 +392,25 @@ qt/intro.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/limits:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypeinfo.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypeinfo.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypetraits.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypetraits.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qisenum.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qisenum.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsysinfo.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsysinfo.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qlogging.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qlogging.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qflags.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qflags.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qbasicatomic.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qbasicatomic.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic_cxx11.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic_cxx11.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qgenericatomic.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qgenericatomic.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/atomic:
 
@@ -422,31 +422,31 @@ qt/intro.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_lockfree_defines.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobalstatic.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobalstatic.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qnumeric.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qnumeric.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qversiontagging.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qversiontagging.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qnamespace.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qnamespace.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs_impl.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs_impl.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs_win.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs_win.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qstring.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qstring.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qchar.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qchar.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearray.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearray.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qrefcount.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qrefcount.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qarraydata.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qarraydata.h:
 
 /usr/share/mingw-w64/include/string.h:
 
@@ -606,15 +606,15 @@ qt/intro.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stream_iterator.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qlist.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qlist.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qalgorithms.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qalgorithms.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qiterator.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qiterator.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qhashfunctions.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qhashfunctions.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qpair.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qpair.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/numeric:
 
@@ -630,21 +630,21 @@ qt/intro.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/list.tcc:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearraylist.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearraylist.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringlist.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringlist.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qregexp.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qregexp.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringmatcher.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringmatcher.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qscopedpointer.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qscopedpointer.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qmetatype.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qmetatype.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qvarlengtharray.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qvarlengtharray.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qcontainerfwd.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qcontainerfwd.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/vector:
 
@@ -672,76 +672,76 @@ qt/intro.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject_impl.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject_impl.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qmargins.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qmargins.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpaintdevice.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpaintdevice.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qrect.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qrect.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsize.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsize.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qpoint.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qpoint.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpalette.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpalette.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qcolor.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qcolor.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgb.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgb.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgba64.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgba64.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qbrush.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qbrush.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qvector.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qvector.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qmatrix.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qmatrix.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpolygon.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpolygon.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qregion.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qregion.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qdatastream.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qdatastream.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qiodevice.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qiodevice.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qline.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qline.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qtransform.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qtransform.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpainterpath.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpainterpath.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qimage.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qimage.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixelformat.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixelformat.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixmap.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixmap.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qshareddata.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qshareddata.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer_impl.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer_impl.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qfont.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qfont.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontmetrics.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontmetrics.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontinfo.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontinfo.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qsizepolicy.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qsizepolicy.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qcursor.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qcursor.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui/qkeysequence.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui/qkeysequence.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/QMutex:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/QMutex:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qmutex.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qmutex.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/QThread:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/QThread:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore/qthread.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore/qthread.h:

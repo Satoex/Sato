@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_VALIDATION_H
-#define RAVEN_VALIDATION_H
+#ifndef SATO_VALIDATION_H
+#define SATO_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/sato-config.h"
@@ -613,4 +613,4 @@ bool IsRestrictedActive(unsigned int nBlockNumber);
 CAssetsCache* GetCurrentAssetCache();
 /** SATO END */
 
-#endif // RAVEN_VALIDATION_H
+#endif // SATO_VALIDATION_H

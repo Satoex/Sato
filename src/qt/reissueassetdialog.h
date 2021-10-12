@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_REISSUEASSETDIALOG_H
-#define RAVEN_QT_REISSUEASSETDIALOG_H
+#ifndef SATO_QT_REISSUEASSETDIALOG_H
+#define SATO_QT_REISSUEASSETDIALOG_H
 
 #include "walletmodel.h"
 
@@ -140,4 +140,4 @@ Q_SIGNALS:
     void message(const QString &title, const QString &message, unsigned int style);
 };
 
-#endif // RAVEN_QT_REISSUEASSETDIALOG_H
+#endif // SATO_QT_REISSUEASSETDIALOG_H

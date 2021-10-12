@@ -19,28 +19,28 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-RAVEN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+SATO_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-RAVEN_INCLUDES += -I$(srcdir)/secp256k1/include
-RAVEN_INCLUDES += $(UNIVALUE_CFLAGS)
+SATO_INCLUDES += -I$(srcdir)/secp256k1/include
+SATO_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBRAVEN_SERVER=libsato_server.a
-LIBRAVEN_COMMON=libsato_common.a
-LIBRAVEN_CONSENSUS=libsato_consensus.a
-LIBRAVEN_CLI=libsato_cli.a
-LIBRAVEN_UTIL=libsato_util.a
-LIBRAVEN_CRYPTO=crypto/libsato_crypto.a
-LIBRAVENQT=qt/libsatoqt.a
+LIBSATO_SERVER=libsato_server.a
+LIBSATO_COMMON=libsato_common.a
+LIBSATO_CONSENSUS=libsato_consensus.a
+LIBSATO_CLI=libsato_cli.a
+LIBSATO_UTIL=libsato_util.a
+LIBSATO_CRYPTO=crypto/libsato_crypto.a
+LIBSATOQT=qt/libsatoqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBRAVEN_ZMQ=libsato_zmq.a
+LIBSATO_ZMQ=libsato_zmq.a
 endif
-if BUILD_RAVEN_LIBS
-LIBRAVENCONSENSUS=libsatoconsensus.la
+if BUILD_SATO_LIBS
+LIBSATOCONSENSUS=libsatoconsensus.la
 endif
 if ENABLE_WALLET
-LIBRAVEN_WALLET=libsato_wallet.a
+LIBSATO_WALLET=libsato_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -49,37 +49,37 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBRAVEN_CRYPTO) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_COMMON) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_SERVER) \
-  $(LIBRAVEN_CLI) \
-  $(LIBRAVEN_WALLET) \
-  $(LIBRAVEN_ZMQ)
+  $(LIBSATO_CRYPTO) \
+  $(LIBSATO_UTIL) \
+  $(LIBSATO_COMMON) \
+  $(LIBSATO_CONSENSUS) \
+  $(LIBSATO_SERVER) \
+  $(LIBSATO_CLI) \
+  $(LIBSATO_WALLET) \
+  $(LIBSATO_ZMQ)
 
-lib_LTLIBRARIES = $(LIBRAVENCONSENSUS)
+lib_LTLIBRARIES = $(LIBSATOCONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_RAVEND
+if BUILD_SATOD
   bin_PROGRAMS += satod
 endif
 
-if BUILD_RAVEN_CLI
+if BUILD_SATO_CLI
   bin_PROGRAMS += sato-cli
 endif
 
-if BUILD_RAVEN_TX
+if BUILD_SATO_TX
   bin_PROGRAMS += sato-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
 # sato core #
-RAVEN_CORE_H = \
+SATO_CORE_H = \
   addrdb.h \
   addressindex.h \
   algo/sph_groestl.h \
@@ -243,7 +243,7 @@ obj/build.h: FORCE
 libsato_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between satod and sato-qt
-libsato_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libsato_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libsato_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_server_a_SOURCES = \
   addrdb.cpp \
@@ -297,10 +297,10 @@ libsato_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 if ENABLE_ZMQ
-libsato_zmq_a_CPPFLAGS = $(RAVEN_INCLUDES) $(ZMQ_CFLAGS)
+libsato_zmq_a_CPPFLAGS = $(SATO_INCLUDES) $(ZMQ_CFLAGS)
 libsato_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
@@ -311,7 +311,7 @@ endif
 
 # wallet: shared between satod and sato-qt, but only linked
 # when wallet enabled
-libsato_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_wallet_a_SOURCES = \
   wallet/crypter.cpp \
@@ -324,7 +324,7 @@ libsato_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
   wallet/bip39.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 # crypto primitives library
 crypto_libsato_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
@@ -376,7 +376,7 @@ crypto_libsato_crypto_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
 # consensus: shared between all executables that validate any consensus rules.
-libsato_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_consensus_a_SOURCES = \
   amount.h \
@@ -413,10 +413,10 @@ libsato_consensus_a_SOURCES = \
   version.h \
   LibBoolEE.cpp \
   LibBoolEE.h \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 # common: shared between satod, and sato-qt and non-server tools
-libsato_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_common_a_SOURCES = \
   base58.cpp \
@@ -435,12 +435,12 @@ libsato_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libsato_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_util_a_SOURCES = \
   support/lockedpool.cpp \
@@ -458,7 +458,7 @@ libsato_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 if GLIBC_BACK_COMPAT
 libsato_util_a_SOURCES += compat/glibc_compat.cpp
@@ -466,18 +466,18 @@ AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
 # cli: shared between sato-cli and sato-qt
-libsato_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 nodist_libsato_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # satod binary #
 satod_SOURCES = satod.cpp
-satod_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+satod_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 satod_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 satod_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -486,14 +486,14 @@ satod_SOURCES += satod-res.rc
 endif
 
 satod_LDADD = \
-  $(LIBRAVEN_SERVER) \
-  $(LIBRAVEN_COMMON) \
+  $(LIBSATO_SERVER) \
+  $(LIBSATO_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_WALLET) \
-  $(LIBRAVEN_ZMQ) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_CRYPTO) \
+  $(LIBSATO_UTIL) \
+  $(LIBSATO_WALLET) \
+  $(LIBSATO_ZMQ) \
+  $(LIBSATO_CONSENSUS) \
+  $(LIBSATO_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
@@ -503,7 +503,7 @@ satod_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_
 
 # sato-cli binary #
 sato_cli_SOURCES = sato-cli.cpp
-sato_cli_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(EVENT_CFLAGS)
+sato_cli_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(EVENT_CFLAGS)
 sato_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 sato_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -512,17 +512,17 @@ sato_cli_SOURCES += sato-cli-res.rc
 endif
 
 sato_cli_LDADD = \
-  $(LIBRAVEN_CLI) \
+  $(LIBSATO_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_CRYPTO)
+  $(LIBSATO_UTIL) \
+  $(LIBSATO_CRYPTO)
 
 sato_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # sato-tx binary #
 sato_tx_SOURCES = sato-tx.cpp
-sato_tx_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+sato_tx_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 sato_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 sato_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -532,17 +532,17 @@ endif
 
 sato_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBRAVEN_COMMON) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_CRYPTO) \
+  $(LIBSATO_COMMON) \
+  $(LIBSATO_UTIL) \
+  $(LIBSATO_CONSENSUS) \
+  $(LIBSATO_CRYPTO) \
   $(LIBSECP256K1)
 
 sato_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # satoconsensus library #
-if BUILD_RAVEN_LIBS
+if BUILD_SATO_LIBS
 include_HEADERS = script/satoconsensus.h
 libsatoconsensus_la_SOURCES = $(crypto_libsato_crypto_a_SOURCES) $(libsato_consensus_a_SOURCES)
 
@@ -552,7 +552,7 @@ endif
 
 libsatoconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
 libsatoconsensus_la_LIBADD = $(LIBSECP256K1) $(BOOST_LIBS)
-libsatoconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_RAVEN_INTERNAL
+libsatoconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_SATO_INTERNAL
 libsatoconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif

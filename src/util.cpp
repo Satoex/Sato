@@ -88,8 +88,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char *const RAVEN_CONF_FILENAME = "sato.conf";
-const char *const RAVEN_PID_FILENAME = "satod.pid";
+const char *const SATO_CONF_FILENAME = "sato.conf";
+const char *const SATO_PID_FILENAME = "satod.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;
@@ -656,7 +656,7 @@ void ArgsManager::ReadConfigFile(const std::string &confPath)
 
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", RAVEN_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", SATO_PID_FILENAME));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

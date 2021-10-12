@@ -1,9 +1,9 @@
 /* src/config/sato-config.h.  Generated from sato-config.h.in by configure.  */
 /* src/config/sato-config.h.in.  Generated from configure.ac by autoheader.  */
 
-#ifndef RAVEN_CONFIG_H
+#ifndef SATO_CONFIG_H
 
-#define RAVEN_CONFIG_H
+#define SATO_CONFIG_H
 
 /* Define if building universal (internal helper macro) */
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
@@ -18,10 +18,10 @@
 #define CLIENT_VERSION_MAJOR 1
 
 /* Minor version */
-#define CLIENT_VERSION_MINOR 0
+#define CLIENT_VERSION_MINOR 1
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 0
+#define CLIENT_VERSION_REVISION 4
 
 /* Copyright holder(s) before %s replacement */
 #define COPYRIGHT_HOLDERS "The %s developers"
@@ -344,13 +344,13 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/Satoex/Sato-Core/issues"
+#define PACKAGE_BUGREPORT "https://github.com/Satoex/Sato/issues"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "Sato Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Sato Core 1.0.0"
+#define PACKAGE_STRING "Sato Core 1.1.4"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "sato"
@@ -359,7 +359,7 @@
 #define PACKAGE_URL "https://satoex.com/sato"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0.0"
+#define PACKAGE_VERSION "1.1.4"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -425,4 +425,4 @@
 /* Define for large files, on AIX-style hosts. */
 /* #undef _LARGE_FILES */
 
-#endif //RAVEN_CONFIG_H
+#endif //SATO_CONFIG_H

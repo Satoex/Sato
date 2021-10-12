@@ -5,16 +5,16 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.0
+!define VERSION 1.1.4
 !define COMPANY "Sato Core project"
 !define URL https://satoex.com/sato
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/satest/share/pixmaps/sato.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/satest/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/root/Sato/share/pixmaps/sato.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/Sato/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/satest/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/Sato/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Sato Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\sato-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/satest/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/Sato/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/satest/sato-${VERSION}-win64-setup.exe
+OutFile /root/Sato/sato-${VERSION}-win64-setup.exe
 !if "64" == "64"
 InstallDir $PROGRAMFILES64\Sato
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/satest/release/sato-qt.exe
-    File /oname=COPYING.txt /root/satest/COPYING
-    File /oname=readme.txt /root/satest/doc/README_windows.txt
+    File /root/Sato/release/sato-qt.exe
+    File /oname=COPYING.txt /root/Sato/COPYING
+    File /oname=readme.txt /root/Sato/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/satest/release/satod.exe
-    File /root/satest/release/sato-cli.exe
+    File /root/Sato/release/satod.exe
+    File /root/Sato/release/sato-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /root/satest/doc\*.*
+    File /r /root/Sato/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd

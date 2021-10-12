@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_ADDRMAN_H
-#define RAVEN_ADDRMAN_H
+#ifndef SATO_ADDRMAN_H
+#define SATO_ADDRMAN_H
 
 #include "netaddress.h"
 #include "protocol.h"
@@ -603,4 +603,4 @@ public:
 
 };
 
-#endif // RAVEN_ADDRMAN_H
+#endif // SATO_ADDRMAN_H

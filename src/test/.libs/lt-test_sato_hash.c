@@ -162,7 +162,7 @@ externally_visible const char * MAGIC_EXE = "%%%MAGIC EXE variable%%%";
 const char * LIB_PATH_VARNAME = "PATH";
 const char * LIB_PATH_VALUE   = "";
 const char * EXE_PATH_VARNAME = "PATH";
-const char * EXE_PATH_VALUE   = "/root/satest/depends/x86_64-w64-mingw32/share/../lib;/root/satest/depends/x86_64-w64-mingw32/share/../bin;";
+const char * EXE_PATH_VALUE   = "/root/Sato/depends/x86_64-w64-mingw32/share/../lib;/root/Sato/depends/x86_64-w64-mingw32/share/../bin;";
 const char * TARGET_PROGRAM_NAME = "test_sato_hash.exe"; /* hopefully, no .exe */
 
 #define LTWRAPPER_OPTION_PREFIX         "--lt-"
@@ -1028,8 +1028,8 @@ void lt_dump_script (FILE* f)
   fputs ("\n", f);
   fputs ("  if test -f \"$progdir/$program\"; then\n", f);
   fputs ("    # Add the dll search path components to the executable PATH\n", f);
-  fputs ("    PATH=/root/satest/depends/x86_64-w64-mingw32/share/../lib:/root/satest/depe", f);
-  fputs ("nds/x86_64-w64-mingw32/share/../bin:$PATH\n", f);
+  fputs ("    PATH=/root/Sato/depends/x86_64-w64-mingw32/share/../lib:/root/Sato/depends/", f);
+  fputs ("x86_64-w64-mingw32/share/../bin:$PATH\n", f);
   fputs ("\n", f);
   fputs ("    if test \"$libtool_execute_magic\" != \"%%%MAGIC variable%%%\"; then\n", f);
   fputs ("      # Run the actual program with our arguments.\n", f);

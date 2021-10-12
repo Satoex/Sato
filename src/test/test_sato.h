@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_TEST_TEST_RAVEN_H
-#define RAVEN_TEST_TEST_RAVEN_H
+#ifndef SATO_TEST_TEST_SATO_H
+#define SATO_TEST_TEST_SATO_H
 
 #include "chainparamsbase.h"
 #include "fs.h"

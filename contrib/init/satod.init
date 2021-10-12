@@ -19,14 +19,14 @@ fi
 RETVAL=0
 
 prog=satod
-# you can override the lockfile via RAVEND_LOCKFILE in /etc/sysconfig/satod
-lockfile=${RAVEND_LOCKFILE-/var/lock/subsys/satod}
+# you can override the lockfile via SATOD_LOCKFILE in /etc/sysconfig/satod
+lockfile=${SATOD_LOCKFILE-/var/lock/subsys/satod}
 
-# satod defaults to /usr/bin/satod, override with RAVEND_BIN
-satod=${RAVEND_BIN-/usr/bin/satod}
+# satod defaults to /usr/bin/satod, override with SATOD_BIN
+satod=${SATOD_BIN-/usr/bin/satod}
 
-# satod opts default to -disablewallet, override with RAVEND_OPTS
-satod_opts=${RAVEND_OPTS--disablewallet}
+# satod opts default to -disablewallet, override with SATOD_OPTS
+satod_opts=${SATOD_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "

@@ -448,14 +448,14 @@ QT_TEST_INCLUDES = @QT_TEST_INCLUDES@
 QT_TEST_LIBS = @QT_TEST_LIBS@
 QT_TRANSLATION_DIR = @QT_TRANSLATION_DIR@
 RANLIB = @RANLIB@
-RAVEN_CLI_NAME = @RAVEN_CLI_NAME@
-RAVEN_DAEMON_NAME = @RAVEN_DAEMON_NAME@
-RAVEN_GUI_NAME = @RAVEN_GUI_NAME@
-RAVEN_TX_NAME = @RAVEN_TX_NAME@
 RCC = @RCC@
 READELF = @READELF@
 RELDFLAGS = @RELDFLAGS@
 RSVG_CONVERT = @RSVG_CONVERT@
+SATO_CLI_NAME = @SATO_CLI_NAME@
+SATO_DAEMON_NAME = @SATO_DAEMON_NAME@
+SATO_GUI_NAME = @SATO_GUI_NAME@
+SATO_TX_NAME = @SATO_TX_NAME@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -537,13 +537,13 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I build-aux/m4
 SUBDIRS = src $(am__append_1)
-@BUILD_RAVEN_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
-@BUILD_RAVEN_LIBS_TRUE@pkgconfig_DATA = libsatoconsensus.pc
-RAVEND_BIN = $(top_builddir)/src/$(RAVEN_DAEMON_NAME)$(EXEEXT)
-RAVEN_QT_BIN = $(top_builddir)/src/qt/$(RAVEN_GUI_NAME)$(EXEEXT)
-RAVEN_CLI_BIN = $(top_builddir)/src/$(RAVEN_CLI_NAME)$(EXEEXT)
-RAVEN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
-RAVEN_CLI_INSTALL = $(top_builddir)/contrib/install_cli.sh
+@BUILD_SATO_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
+@BUILD_SATO_LIBS_TRUE@pkgconfig_DATA = libsatoconsensus.pc
+SATOD_BIN = $(top_builddir)/src/$(SATO_DAEMON_NAME)$(EXEEXT)
+SATO_QT_BIN = $(top_builddir)/src/qt/$(SATO_GUI_NAME)$(EXEEXT)
+SATO_CLI_BIN = $(top_builddir)/src/$(SATO_CLI_NAME)$(EXEEXT)
+SATO_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+SATO_CLI_INSTALL = $(top_builddir)/contrib/install_cli.sh
 empty := 
 space := $(empty) $(empty)
 OSX_APP = Sato-Qt.app
@@ -646,7 +646,7 @@ EXTRA_DIST = $(DIST_SHARE) test/functional/test_runner.py \
 	test/util/data/txcreatesignv1.hex \
 	test/util/data/txcreatesignv1.json \
 	test/util/data/txcreatesignv2.hex
-CLEANFILES = $(OSX_DMG) $(RAVEN_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(SATO_WIN_INSTALLER)
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 all: all-recursive
 
@@ -1178,11 +1178,11 @@ export PYTHONPATH
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
 
-$(RAVEN_WIN_INSTALLER): all-recursive
+$(SATO_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(RAVEND_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(RAVEN_QT_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(RAVEN_CLI_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(SATOD_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(SATO_QT_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(SATO_CLI_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
 	  echo error: could not build $@
 	@echo built $@
@@ -1203,19 +1203,19 @@ $(OSX_APP)/Contents/Resources/sato.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/install_cli.sh: $(RAVEN_CLI_INSTALL)
+$(OSX_APP)/Contents/MacOS/install_cli.sh: $(SATO_CLI_INSTALL)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Sato-Qt: $(RAVEN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Sato-Qt: $(SATO_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/satod: $(RAVEND_BIN)
+$(OSX_APP)/Contents/MacOS/satod: $(SATOD_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/sato-cli: $(RAVEN_CLI_BIN)
+$(OSX_APP)/Contents/MacOS/sato-cli: $(SATO_CLI_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -1263,15 +1263,15 @@ osx_volname:
 
 @TARGET_DARWIN_TRUE@appbundle: $(OSX_APP_BUILT)
 @TARGET_DARWIN_TRUE@deploy: $(OSX_DMG)
-@TARGET_WINDOWS_TRUE@deploy: $(RAVEN_WIN_INSTALLER)
+@TARGET_WINDOWS_TRUE@deploy: $(SATO_WIN_INSTALLER)
 
-$(RAVEN_QT_BIN): FORCE
+$(SATO_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
-$(RAVEND_BIN): FORCE
+$(SATOD_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(RAVEN_CLI_BIN): FORCE
+$(SATO_CLI_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 @USE_LCOV_TRUE@baseline.info:

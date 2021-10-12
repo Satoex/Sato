@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_ASSETDB_H
-#define RAVEN_ASSETDB_H
+#ifndef SATO_ASSETDB_H
+#define SATO_ASSETDB_H
 
 #include "fs.h"
 #include "serialize.h"
@@ -95,4 +95,4 @@ public:
 };
 
 
-#endif //RAVEN_ASSETDB_H
+#endif //SATO_ASSETDB_H

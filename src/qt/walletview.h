@@ -1,10 +1,10 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
-// Copyright (c) 2017-2019 The Sato Core developers
+// Copyright (c) 2017-2021 The Sato Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_WALLETVIEW_H
-#define RAVEN_QT_WALLETVIEW_H
+#ifndef SATO_QT_WALLETVIEW_H
+#define SATO_QT_WALLETVIEW_H
 
 #include "amount.h"
 
@@ -154,4 +154,4 @@ Q_SIGNALS:
     void checkAssets();
 };
 
-#endif // RAVEN_QT_WALLETVIEW_H
+#endif // SATO_QT_WALLETVIEW_H

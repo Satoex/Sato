@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_GUICONSTANTS_H
-#define RAVEN_QT_GUICONSTANTS_H
+#ifndef SATO_QT_GUICONSTANTS_H
+#define SATO_QT_GUICONSTANTS_H
 
 /* Milliseconds between model updates */
 static const int MODEL_UPDATE_DELAY = 250;
@@ -116,4 +116,4 @@ static const int MAX_URI_LENGTH = 255;
 #define QAPP_APP_NAME_DEFAULT "Sato-Qt"
 #define QAPP_APP_NAME_TESTNET "Sato-Qt-testnet"
 
-#endif // RAVEN_QT_GUICONSTANTS_H
+#endif // SATO_QT_GUICONSTANTS_H

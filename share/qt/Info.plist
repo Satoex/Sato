@@ -17,13 +17,13 @@
   <string>APPL</string>
 
   <key>CFBundleGetInfoString</key>
-  <string>1.0.0, Copyright © 2009-2021 The Sato Core developers</string>
+  <string>1.1.4, Copyright © 2009-2021 The Sato Core developers</string>
 
   <key>CFBundleShortVersionString</key>
-  <string>1.0.0</string>
+  <string>1.1.4</string>
 
   <key>CFBundleVersion</key>
-  <string>1.0.0</string>
+  <string>1.1.4</string>
 
   <key>CFBundleSignature</key>
   <string>????</string>

@@ -283,37 +283,37 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /root/satest/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /root/Sato/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/x86_64-w64-mingw32-ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /root/satest/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /root/satest/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /root/satest/build-aux/missing automake-1.15
+AUTOCONF = ${SHELL} /root/Sato/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /root/Sato/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /root/Sato/build-aux/missing automake-1.15
 AWK = mawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
 BOOST_CHRONO_LIB = -lboost_chrono-mt-s
-BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -mthreads -I/root/satest/depends/x86_64-w64-mingw32/share/../include
+BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -mthreads -I/root/Sato/depends/x86_64-w64-mingw32/share/../include
 BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s
-BOOST_LDFLAGS = -L/root/satest/depends/x86_64-w64-mingw32/share/../lib
-BOOST_LIBS = -L/root/satest/depends/x86_64-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
+BOOST_LDFLAGS = -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib
+BOOST_LIBS = -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
 BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s
 BOOST_SYSTEM_LIB = -lboost_system-mt-s
 BOOST_THREAD_LIB = -lboost_thread_win32-mt-s
 BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework-mt-s
 BREW = 
-CC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-gcc
-CCACHE = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/ccache
+CC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-gcc
+CCACHE = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/ccache
 CCDEPMODE = depmode=gcc3
 CFLAGS = -pipe -O2 
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
-CLIENT_VERSION_MINOR = 0
-CLIENT_VERSION_REVISION = 0
+CLIENT_VERSION_MINOR = 1
+CLIENT_VERSION_REVISION = 4
 COMPAT_LDFLAGS = 
 COPYRIGHT_HOLDERS = The %s developers
 COPYRIGHT_HOLDERS_FINAL = The Sato Core developers
@@ -321,10 +321,10 @@ COPYRIGHT_HOLDERS_SUBSTITUTION = Sato Core
 COPYRIGHT_YEAR = 2021
 CPP = x86_64-w64-mingw32-gcc -E
 CPPFILT = /usr/bin/x86_64-w64-mingw32-c++filt
-CPPFLAGS = -I/root/satest/depends/x86_64-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
+CPPFLAGS = -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
 CRYPTO_CFLAGS = 
 CRYPTO_LIBS = -lcrypto
-CXX = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-g++ -std=c++11
+CXX = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-g++ -std=c++11
 CXXCPP = x86_64-w64-mingw32-g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -pipe -O2 
@@ -367,7 +367,7 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LCOV = 
 LCOV_OPTS = 
 LD = /usr/bin/x86_64-w64-mingw32-ld
-LDFLAGS = -L/root/satest/depends/x86_64-w64-mingw32/share/../lib 
+LDFLAGS = -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib 
 LEVELDB_CPPFLAGS = 
 LEVELDB_TARGET_FLAGS = -DOS_WINDOWS
 LIBLEVELDB = 
@@ -378,18 +378,18 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS =  -all-static
 LIPO = 
 LN_S = ln -s
-LRELEASE = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/lrelease
+LRELEASE = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = 
 MAINT = 
-MAKEINFO = ${SHELL} /root/satest/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /root/Sato/build-aux/missing makeinfo
 MAKENSIS = /usr/bin/makensis
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/moc
+MOC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
 NM = x86_64-w64-mingw32-nm
 NMEDIT = 
@@ -402,27 +402,27 @@ OBJEXT = o
 OTOOL = 
 OTOOL64 = 
 PACKAGE = sato
-PACKAGE_BUGREPORT = https://github.com/Satoex/Sato-Core/issues
+PACKAGE_BUGREPORT = https://github.com/Satoex/Sato/issues
 PACKAGE_NAME = Sato Core
-PACKAGE_STRING = Sato Core 1.0.0
+PACKAGE_STRING = Sato Core 1.1.4
 PACKAGE_TARNAME = sato
 PACKAGE_URL = https://satoex.com/sato
-PACKAGE_VERSION = 1.0.0
+PACKAGE_VERSION = 1.1.4
 PATH_SEPARATOR = :
 PIC_FLAGS = 
 PIE_FLAGS = -fPIE
 PKG_CONFIG = /usr/bin/pkg-config --static
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /root/satest/depends/x86_64-w64-mingw32/share/../share/pkgconfig:/root/satest/depends/x86_64-w64-mingw32/share/../lib/pkgconfig
+PKG_CONFIG_PATH = /root/Sato/depends/x86_64-w64-mingw32/share/../share/pkgconfig:/root/Sato/depends/x86_64-w64-mingw32/share/../lib/pkgconfig
 PORT = 
 PROTOBUF_CFLAGS = 
 PROTOBUF_LIBS = -lprotobuf
-PROTOC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/protoc
+PROTOC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/protoc
 PTHREAD_CC = x86_64-w64-mingw32-gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = /root/satest/depends/x86_64-w64-mingw32/share/../native/lib/python/dist-packages:
+PYTHONPATH = /root/Sato/depends/x86_64-w64-mingw32/share/../native/lib/python/dist-packages:
 QR_CFLAGS = 
 QR_LIBS = -lqrencode
 QT4_CFLAGS = 
@@ -437,25 +437,25 @@ QTXCBQPA_CFLAGS =
 QTXCBQPA_LIBS = 
 QT_DBUS_CFLAGS = 
 QT_DBUS_INCLUDES = 
-QT_DBUS_LIBS = -lQt5DBus -L/root/satest/depends/x86_64-w64-mingw32/share/../lib
-QT_INCLUDES = -I/root/satest/depends/x86_64-w64-mingw32/share/../include -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtNetwork -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtTest -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtDBus
+QT_DBUS_LIBS = -lQt5DBus -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib
+QT_INCLUDES = -I/root/Sato/depends/x86_64-w64-mingw32/share/../include -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtNetwork -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtTest -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtDBus
 QT_LDFLAGS =  -mwindows
-QT_LIBS = -lqwindows -lqminimal -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -lqtpng -lz  -limm32  -L/root/satest/depends/x86_64-w64-mingw32/share/../lib -L/root/satest/depends/x86_64-w64-mingw32/share/../plugins/platforms
+QT_LIBS = -lqwindows -lqminimal -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -lqtpng -lz  -limm32  -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib -L/root/Sato/depends/x86_64-w64-mingw32/share/../plugins/platforms
 QT_PIE_FLAGS = -fPIE
 QT_SELECT = qt5
 QT_TEST_CFLAGS = 
 QT_TEST_INCLUDES = 
-QT_TEST_LIBS = -lQt5Test -L/root/satest/depends/x86_64-w64-mingw32/share/../lib
-QT_TRANSLATION_DIR = /root/satest/depends/x86_64-w64-mingw32/share/../translations
+QT_TEST_LIBS = -lQt5Test -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib
+QT_TRANSLATION_DIR = /root/Sato/depends/x86_64-w64-mingw32/share/../translations
 RANLIB = /usr/bin/x86_64-w64-mingw32-ranlib
-RAVEN_CLI_NAME = sato-cli
-RAVEN_DAEMON_NAME = satod
-RAVEN_GUI_NAME = sato-qt
-RAVEN_TX_NAME = sato-tx
-RCC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/rcc
+RCC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/rcc
 READELF = /usr/bin/x86_64-w64-mingw32-readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
+SATO_CLI_NAME = sato-cli
+SATO_DAEMON_NAME = satod
+SATO_GUI_NAME = sato-qt
+SATO_TX_NAME = sato-tx
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
@@ -465,23 +465,23 @@ SSL_LIBS = -lssl
 STRIP = /usr/bin/x86_64-w64-mingw32-strip
 TESTDEFS = 
 TIFFCP = 
-UIC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/uic
+UIC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_UPNP = 
-VERSION = 1.0.0
+VERSION = 1.1.4
 WINDOWS_BITS = 64
 WINDRES = /usr/bin/x86_64-w64-mingw32-windres
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
-XGETTEXT = /usr/bin/xgettext
+XGETTEXT = 
 ZMQ_CFLAGS =  -DZMQ_STATIC
 ZMQ_LIBS = -lzmq
-abs_builddir = /root/satest
-abs_srcdir = /root/satest
-abs_top_builddir = /root/satest
-abs_top_srcdir = /root/satest
+abs_builddir = /root/Sato
+abs_srcdir = /root/Sato
+abs_top_builddir = /root/Sato
+abs_top_srcdir = /root/Sato
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_CXX = 
@@ -513,7 +513,7 @@ host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/satest/build-aux/install-sh
+install_sh = ${SHELL} /root/Sato/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -522,7 +522,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /root/satest/depends/x86_64-w64-mingw32
+prefix = /root/Sato/depends/x86_64-w64-mingw32
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -539,11 +539,11 @@ ACLOCAL_AMFLAGS = -I build-aux/m4
 SUBDIRS = src $(am__append_1)
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libsatoconsensus.pc
-RAVEND_BIN = $(top_builddir)/src/$(RAVEN_DAEMON_NAME)$(EXEEXT)
-RAVEN_QT_BIN = $(top_builddir)/src/qt/$(RAVEN_GUI_NAME)$(EXEEXT)
-RAVEN_CLI_BIN = $(top_builddir)/src/$(RAVEN_CLI_NAME)$(EXEEXT)
-RAVEN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
-RAVEN_CLI_INSTALL = $(top_builddir)/contrib/install_cli.sh
+SATOD_BIN = $(top_builddir)/src/$(SATO_DAEMON_NAME)$(EXEEXT)
+SATO_QT_BIN = $(top_builddir)/src/qt/$(SATO_GUI_NAME)$(EXEEXT)
+SATO_CLI_BIN = $(top_builddir)/src/$(SATO_CLI_NAME)$(EXEEXT)
+SATO_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+SATO_CLI_INSTALL = $(top_builddir)/contrib/install_cli.sh
 empty := 
 space := $(empty) $(empty)
 OSX_APP = Sato-Qt.app
@@ -646,7 +646,7 @@ EXTRA_DIST = $(DIST_SHARE) test/functional/test_runner.py \
 	test/util/data/txcreatesignv1.hex \
 	test/util/data/txcreatesignv1.json \
 	test/util/data/txcreatesignv2.hex
-CLEANFILES = $(OSX_DMG) $(RAVEN_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(SATO_WIN_INSTALLER)
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 all: all-recursive
 
@@ -1178,11 +1178,11 @@ export PYTHONPATH
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
 
-$(RAVEN_WIN_INSTALLER): all-recursive
+$(SATO_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(RAVEND_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(RAVEN_QT_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(RAVEN_CLI_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(SATOD_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(SATO_QT_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(SATO_CLI_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
 	  echo error: could not build $@
 	@echo built $@
@@ -1203,19 +1203,19 @@ $(OSX_APP)/Contents/Resources/sato.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/install_cli.sh: $(RAVEN_CLI_INSTALL)
+$(OSX_APP)/Contents/MacOS/install_cli.sh: $(SATO_CLI_INSTALL)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Sato-Qt: $(RAVEN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Sato-Qt: $(SATO_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/satod: $(RAVEND_BIN)
+$(OSX_APP)/Contents/MacOS/satod: $(SATOD_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
-$(OSX_APP)/Contents/MacOS/sato-cli: $(RAVEN_CLI_BIN)
+$(OSX_APP)/Contents/MacOS/sato-cli: $(SATO_CLI_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -1263,15 +1263,15 @@ deploydir: $(APP_DIST_EXTRAS)
 
 #appbundle: $(OSX_APP_BUILT)
 #deploy: $(OSX_DMG)
-deploy: $(RAVEN_WIN_INSTALLER)
+deploy: $(SATO_WIN_INSTALLER)
 
-$(RAVEN_QT_BIN): FORCE
+$(SATO_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
-$(RAVEND_BIN): FORCE
+$(SATOD_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(RAVEN_CLI_BIN): FORCE
+$(SATO_CLI_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 #baseline.info:

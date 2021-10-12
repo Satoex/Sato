@@ -160,22 +160,22 @@ am__append_24 = \
   wallet/test/wallet_tests.cpp \
   wallet/test/crypto_tests.cpp
 
-am__append_25 = $(LIBRAVEN_WALLET)
+am__append_25 = $(LIBSATO_WALLET)
 am__append_26 = $(ZMQ_LIBS)
-am__append_27 = $(CLEAN_RAVEN_TEST)
+am__append_27 = $(CLEAN_SATO_TEST)
 am__append_28 = bench/bench_sato
-am__append_29 = $(LIBRAVEN_ZMQ) $(ZMQ_LIBS)
+am__append_29 = $(LIBSATO_ZMQ) $(ZMQ_LIBS)
 am__append_30 = bench/coin_selection.cpp
-am__append_31 = $(LIBRAVEN_WALLET) $(LIBRAVEN_CRYPTO)
-am__append_32 = $(CLEAN_RAVEN_BENCH)
+am__append_31 = $(LIBSATO_WALLET) $(LIBSATO_CRYPTO)
+am__append_32 = $(CLEAN_SATO_BENCH)
 am__append_33 = qt/sato-qt
 am__append_34 = qt/libsatoqt.a
-am__append_35 = $(RAVEN_QT_WINDOWS_CPP)
-am__append_36 = $(RAVEN_QT_WALLET_CPP)
-#am__append_37 = $(RAVEN_MM)
-am__append_38 = $(RAVEN_RC)
-am__append_39 = $(LIBRAVEN_WALLET)
-am__append_40 = $(LIBRAVEN_ZMQ) $(ZMQ_LIBS)
+am__append_35 = $(SATO_QT_WINDOWS_CPP)
+am__append_36 = $(SATO_QT_WALLET_CPP)
+#am__append_37 = $(SATO_MM)
+am__append_38 = $(SATO_RC)
+am__append_39 = $(LIBSATO_WALLET)
+am__append_40 = $(LIBSATO_ZMQ) $(ZMQ_LIBS)
 am__append_41 = $(CLEAN_QT)
 am__append_42 = qt/test/test_sato-qt
 am__append_43 = qt/test/test_sato-qt
@@ -188,9 +188,9 @@ am__append_45 = \
   qt/test/wallettests.cpp \
   wallet/test/wallet_test_fixture.cpp
 
-am__append_46 = $(LIBRAVEN_WALLET)
-am__append_47 = $(LIBRAVEN_ZMQ) $(ZMQ_LIBS)
-am__append_48 = $(CLEAN_RAVEN_QT_TEST)
+am__append_46 = $(LIBSATO_WALLET)
+am__append_47 = $(LIBSATO_ZMQ) $(ZMQ_LIBS)
+am__append_48 = $(CLEAN_SATO_QT_TEST)
 subdir = src
 SUBDIRS =
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -1294,11 +1294,11 @@ am__DEPENDENCIES_3 = $(am__append_13)
 #am__DEPENDENCIES_4 = $(am__DEPENDENCIES_1)
 am__DEPENDENCIES_4 = univalue/libunivalue.la
 am__DEPENDENCIES_5 =  \
-	$(LIBRAVEN_ZMQ) \
+	$(LIBSATO_ZMQ) \
 	$(am__DEPENDENCIES_1)
-bench_bench_sato_DEPENDENCIES = $(LIBRAVEN_SERVER) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+bench_bench_sato_DEPENDENCIES = $(LIBSATO_SERVER) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(am__DEPENDENCIES_2) $(LIBLEVELDB_SSE42) \
 	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
 	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_5) \
@@ -1323,13 +1323,13 @@ am__objects_32 =  \
 am_qt_sato_qt_OBJECTS = qt/qt_sato_qt-sato.$(OBJEXT) \
 	$(am__objects_30) $(am__objects_32)
 qt_sato_qt_OBJECTS = $(am_qt_sato_qt_OBJECTS)
-am__DEPENDENCIES_6 = $(LIBRAVEN_ZMQ) \
+am__DEPENDENCIES_6 = $(LIBSATO_ZMQ) \
 	$(am__DEPENDENCIES_1)
 qt_sato_qt_DEPENDENCIES = qt/libsatoqt.a \
-	$(LIBRAVEN_SERVER) $(am__append_39) \
-	$(am__DEPENDENCIES_6) $(LIBRAVEN_CLI) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+	$(LIBSATO_SERVER) $(am__append_39) \
+	$(am__DEPENDENCIES_6) $(LIBSATO_CLI) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_2) \
 	$(LIBLEVELDB_SSE42) $(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -1370,14 +1370,14 @@ nodist_qt_test_test_sato_qt_OBJECTS =  \
 qt_test_test_sato_qt_OBJECTS = $(am_qt_test_test_sato_qt_OBJECTS) \
 	$(nodist_qt_test_test_sato_qt_OBJECTS)
 am__DEPENDENCIES_7 =  \
-	$(LIBRAVEN_ZMQ) \
+	$(LIBSATO_ZMQ) \
 	$(am__DEPENDENCIES_1)
 qt_test_test_sato_qt_DEPENDENCIES =  \
-	$(LIBRAVENQT) $(LIBRAVEN_SERVER) \
+	$(LIBSATOQT) $(LIBSATO_SERVER) \
 	$(am__append_46) $(am__DEPENDENCIES_7) \
-	$(LIBRAVEN_CLI) $(LIBRAVEN_COMMON) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_CONSENSUS) \
-	$(LIBRAVEN_CRYPTO) $(am__DEPENDENCIES_4) \
+	$(LIBSATO_CLI) $(LIBSATO_COMMON) \
+	$(LIBSATO_UTIL) $(LIBSATO_CONSENSUS) \
+	$(LIBSATO_CRYPTO) $(am__DEPENDENCIES_4) \
 	$(am__DEPENDENCIES_2) \
 	$(LIBLEVELDB_SSE42) \
 	$(am__DEPENDENCIES_3) \
@@ -1401,8 +1401,8 @@ am__sato_cli_SOURCES_DIST = sato-cli.cpp sato-cli-res.rc
 am__objects_37 = sato-cli-res.$(OBJEXT)
 am_sato_cli_OBJECTS = sato_cli-sato-cli.$(OBJEXT) $(am__objects_37)
 sato_cli_OBJECTS = $(am_sato_cli_OBJECTS)
-sato_cli_DEPENDENCIES = $(LIBRAVEN_CLI) $(am__DEPENDENCIES_4) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_CRYPTO) $(am__DEPENDENCIES_1) \
+sato_cli_DEPENDENCIES = $(LIBSATO_CLI) $(am__DEPENDENCIES_4) \
+	$(LIBSATO_UTIL) $(LIBSATO_CRYPTO) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 sato_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
@@ -1412,8 +1412,8 @@ am__sato_tx_SOURCES_DIST = sato-tx.cpp sato-tx-res.rc
 am__objects_38 = sato-tx-res.$(OBJEXT)
 am_sato_tx_OBJECTS = sato_tx-sato-tx.$(OBJEXT) $(am__objects_38)
 sato_tx_OBJECTS = $(am_sato_tx_OBJECTS)
-sato_tx_DEPENDENCIES = $(am__DEPENDENCIES_4) $(LIBRAVEN_COMMON) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+sato_tx_DEPENDENCIES = $(am__DEPENDENCIES_4) $(LIBSATO_COMMON) \
+	$(LIBSATO_UTIL) $(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(LIBSECP256K1) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 sato_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(sato_tx_CXXFLAGS) \
@@ -1422,9 +1422,9 @@ am__satod_SOURCES_DIST = satod.cpp satod-res.rc
 am__objects_39 = satod-res.$(OBJEXT)
 am_satod_OBJECTS = satod-satod.$(OBJEXT) $(am__objects_39)
 satod_OBJECTS = $(am_satod_OBJECTS)
-satod_DEPENDENCIES = $(LIBRAVEN_SERVER) $(LIBRAVEN_COMMON) \
-	$(am__DEPENDENCIES_4) $(LIBRAVEN_UTIL) $(LIBRAVEN_WALLET) \
-	$(LIBRAVEN_ZMQ) $(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+satod_DEPENDENCIES = $(LIBSATO_SERVER) $(LIBSATO_COMMON) \
+	$(am__DEPENDENCIES_4) $(LIBSATO_UTIL) $(LIBSATO_WALLET) \
+	$(LIBSATO_ZMQ) $(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(am__DEPENDENCIES_2) $(LIBLEVELDB_SSE42) \
 	$(am__DEPENDENCIES_3) $(LIBSECP256K1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -1569,15 +1569,15 @@ test_test_sato_OBJECTS = $(am_test_test_sato_OBJECTS) \
 am__DEPENDENCIES_8 =  \
 	$(am__DEPENDENCIES_1)
 test_test_sato_DEPENDENCIES = $(am__append_25) \
-	$(LIBRAVEN_SERVER) $(LIBRAVEN_CLI) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+	$(LIBSATO_SERVER) $(LIBSATO_CLI) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_2) \
 	$(LIBLEVELDB_SSE42) $(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(LIBSECP256K1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(LIBRAVEN_CONSENSUS) \
-	$(LIBRAVEN_CRYPTO) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(LIBSATO_CONSENSUS) \
+	$(LIBSATO_CRYPTO) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_8)
 test_test_sato_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
@@ -1588,9 +1588,9 @@ am__test_test_sato_fuzzy_SOURCES_DIST = test/test_sato_fuzzy.cpp
 am_test_test_sato_fuzzy_OBJECTS = test/test_test_sato_fuzzy-test_sato_fuzzy.$(OBJEXT)
 test_test_sato_fuzzy_OBJECTS = $(am_test_test_sato_fuzzy_OBJECTS)
 test_test_sato_fuzzy_DEPENDENCIES =  \
-	$(am__DEPENDENCIES_4) $(LIBRAVEN_SERVER) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+	$(am__DEPENDENCIES_4) $(LIBSATO_SERVER) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(LIBSECP256K1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 test_test_sato_fuzzy_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
@@ -1601,9 +1601,9 @@ am__test_test_sato_hash_SOURCES_DIST = test/test_sato_hash.cpp
 am_test_test_sato_hash_OBJECTS = test/test_test_sato_hash-test_sato_hash.$(OBJEXT)
 test_test_sato_hash_OBJECTS = $(am_test_test_sato_hash_OBJECTS)
 test_test_sato_hash_DEPENDENCIES =  \
-	$(am__DEPENDENCIES_4) $(LIBRAVEN_COMMON) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_CONSENSUS) \
-	$(LIBRAVEN_CRYPTO) $(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_4) $(LIBSATO_COMMON) \
+	$(LIBSATO_UTIL) $(LIBSATO_CONSENSUS) \
+	$(LIBSATO_CRYPTO) $(am__DEPENDENCIES_1)
 test_test_sato_hash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_test_sato_hash_CXXFLAGS) $(CXXFLAGS) \
@@ -1962,37 +1962,37 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /root/satest/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /root/Sato/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/x86_64-w64-mingw32-ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /root/satest/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /root/satest/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /root/satest/build-aux/missing automake-1.15
+AUTOCONF = ${SHELL} /root/Sato/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /root/Sato/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /root/Sato/build-aux/missing automake-1.15
 AWK = mawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
 BOOST_CHRONO_LIB = -lboost_chrono-mt-s
-BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -mthreads -I/root/satest/depends/x86_64-w64-mingw32/share/../include
+BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -mthreads -I/root/Sato/depends/x86_64-w64-mingw32/share/../include
 BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s
-BOOST_LDFLAGS = -L/root/satest/depends/x86_64-w64-mingw32/share/../lib
-BOOST_LIBS = -L/root/satest/depends/x86_64-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
+BOOST_LDFLAGS = -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib
+BOOST_LIBS = -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
 BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s
 BOOST_SYSTEM_LIB = -lboost_system-mt-s
 BOOST_THREAD_LIB = -lboost_thread_win32-mt-s
 BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework-mt-s
 BREW = 
-CC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-gcc
-CCACHE = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/ccache
+CC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-gcc
+CCACHE = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/ccache
 CCDEPMODE = depmode=gcc3
 CFLAGS = -pipe -O2 
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
-CLIENT_VERSION_MINOR = 0
-CLIENT_VERSION_REVISION = 0
+CLIENT_VERSION_MINOR = 1
+CLIENT_VERSION_REVISION = 4
 COMPAT_LDFLAGS = 
 COPYRIGHT_HOLDERS = The %s developers
 COPYRIGHT_HOLDERS_FINAL = The Sato Core developers
@@ -2000,10 +2000,10 @@ COPYRIGHT_HOLDERS_SUBSTITUTION = Sato Core
 COPYRIGHT_YEAR = 2021
 CPP = x86_64-w64-mingw32-gcc -E
 CPPFILT = /usr/bin/x86_64-w64-mingw32-c++filt
-CPPFLAGS = -I/root/satest/depends/x86_64-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
+CPPFLAGS = -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
 CRYPTO_CFLAGS = 
 CRYPTO_LIBS = -lcrypto
-CXX = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-g++ -std=c++11
+CXX = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-g++ -std=c++11
 CXXCPP = x86_64-w64-mingw32-g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -pipe -O2 
@@ -2046,7 +2046,7 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LCOV = 
 LCOV_OPTS = 
 LD = /usr/bin/x86_64-w64-mingw32-ld
-LDFLAGS = -L/root/satest/depends/x86_64-w64-mingw32/share/../lib 
+LDFLAGS = -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib 
 LEVELDB_CPPFLAGS =  $(am__append_14)
 LEVELDB_TARGET_FLAGS = -DOS_WINDOWS
 LIBLEVELDB =  $(am__append_12)
@@ -2057,18 +2057,18 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS =  -all-static
 LIPO = 
 LN_S = ln -s
-LRELEASE = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/lrelease
+LRELEASE = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = 
 MAINT = 
-MAKEINFO = ${SHELL} /root/satest/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /root/Sato/build-aux/missing makeinfo
 MAKENSIS = /usr/bin/makensis
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/moc
+MOC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
 NM = x86_64-w64-mingw32-nm
 NMEDIT = 
@@ -2081,27 +2081,27 @@ OBJEXT = o
 OTOOL = 
 OTOOL64 = 
 PACKAGE = sato
-PACKAGE_BUGREPORT = https://github.com/Satoex/Sato-Core/issues
+PACKAGE_BUGREPORT = https://github.com/Satoex/Sato/issues
 PACKAGE_NAME = Sato Core
-PACKAGE_STRING = Sato Core 1.0.0
+PACKAGE_STRING = Sato Core 1.1.4
 PACKAGE_TARNAME = sato
 PACKAGE_URL = https://satoex.com/sato
-PACKAGE_VERSION = 1.0.0
+PACKAGE_VERSION = 1.1.4
 PATH_SEPARATOR = :
 PIC_FLAGS = 
 PIE_FLAGS = -fPIE
 PKG_CONFIG = /usr/bin/pkg-config --static
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /root/satest/depends/x86_64-w64-mingw32/share/../share/pkgconfig:/root/satest/depends/x86_64-w64-mingw32/share/../lib/pkgconfig
+PKG_CONFIG_PATH = /root/Sato/depends/x86_64-w64-mingw32/share/../share/pkgconfig:/root/Sato/depends/x86_64-w64-mingw32/share/../lib/pkgconfig
 PORT = 
 PROTOBUF_CFLAGS = 
 PROTOBUF_LIBS = -lprotobuf
-PROTOC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/protoc
+PROTOC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/protoc
 PTHREAD_CC = x86_64-w64-mingw32-gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = /root/satest/depends/x86_64-w64-mingw32/share/../native/lib/python/dist-packages:
+PYTHONPATH = /root/Sato/depends/x86_64-w64-mingw32/share/../native/lib/python/dist-packages:
 QR_CFLAGS = 
 QR_LIBS = -lqrencode
 QT4_CFLAGS = 
@@ -2116,25 +2116,25 @@ QTXCBQPA_CFLAGS =
 QTXCBQPA_LIBS = 
 QT_DBUS_CFLAGS = 
 QT_DBUS_INCLUDES = 
-QT_DBUS_LIBS = -lQt5DBus -L/root/satest/depends/x86_64-w64-mingw32/share/../lib
-QT_INCLUDES = -I/root/satest/depends/x86_64-w64-mingw32/share/../include -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtCore -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtGui -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtWidgets -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtNetwork -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtTest -I/root/satest/depends/x86_64-w64-mingw32/share/../include/QtDBus
+QT_DBUS_LIBS = -lQt5DBus -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib
+QT_INCLUDES = -I/root/Sato/depends/x86_64-w64-mingw32/share/../include -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtCore -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtGui -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtWidgets -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtNetwork -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtTest -I/root/Sato/depends/x86_64-w64-mingw32/share/../include/QtDBus
 QT_LDFLAGS =  -mwindows
-QT_LIBS = -lqwindows -lqminimal -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -lqtpng -lz  -limm32  -L/root/satest/depends/x86_64-w64-mingw32/share/../lib -L/root/satest/depends/x86_64-w64-mingw32/share/../plugins/platforms
+QT_LIBS = -lqwindows -lqminimal -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -lqtpng -lz  -limm32  -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib -L/root/Sato/depends/x86_64-w64-mingw32/share/../plugins/platforms
 QT_PIE_FLAGS = -fPIE
 QT_SELECT = qt5
 QT_TEST_CFLAGS = 
 QT_TEST_INCLUDES = 
-QT_TEST_LIBS = -lQt5Test -L/root/satest/depends/x86_64-w64-mingw32/share/../lib
-QT_TRANSLATION_DIR = /root/satest/depends/x86_64-w64-mingw32/share/../translations
+QT_TEST_LIBS = -lQt5Test -L/root/Sato/depends/x86_64-w64-mingw32/share/../lib
+QT_TRANSLATION_DIR = /root/Sato/depends/x86_64-w64-mingw32/share/../translations
 RANLIB = /usr/bin/x86_64-w64-mingw32-ranlib
-RAVEN_CLI_NAME = sato-cli
-RAVEN_DAEMON_NAME = satod
-RAVEN_GUI_NAME = sato-qt
-RAVEN_TX_NAME = sato-tx
-RCC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/rcc
+RCC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/rcc
 READELF = /usr/bin/x86_64-w64-mingw32-readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
+SATO_CLI_NAME = sato-cli
+SATO_DAEMON_NAME = satod
+SATO_GUI_NAME = sato-qt
+SATO_TX_NAME = sato-tx
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
@@ -2144,23 +2144,23 @@ SSL_LIBS = -lssl
 STRIP = /usr/bin/x86_64-w64-mingw32-strip
 TESTDEFS = 
 TIFFCP = 
-UIC = /root/satest/depends/x86_64-w64-mingw32/share/../native/bin/uic
+UIC = /root/Sato/depends/x86_64-w64-mingw32/share/../native/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_UPNP = 
-VERSION = 1.0.0
+VERSION = 1.1.4
 WINDOWS_BITS = 64
 WINDRES = /usr/bin/x86_64-w64-mingw32-windres
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
-XGETTEXT = /usr/bin/xgettext
+XGETTEXT = 
 ZMQ_CFLAGS =  -DZMQ_STATIC
 ZMQ_LIBS = -lzmq
-abs_builddir = /root/satest/src
-abs_srcdir = /root/satest/src
-abs_top_builddir = /root/satest
-abs_top_srcdir = /root/satest
+abs_builddir = /root/Sato/src
+abs_srcdir = /root/Sato/src
+abs_top_builddir = /root/Sato
+abs_top_srcdir = /root/Sato
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_CXX = 
@@ -2192,7 +2192,7 @@ host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/satest/build-aux/install-sh
+install_sh = ${SHELL} /root/Sato/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -2201,7 +2201,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /root/satest/depends/x86_64-w64-mingw32
+prefix = /root/Sato/depends/x86_64-w64-mingw32
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -2222,30 +2222,30 @@ AM_CPPFLAGS = $(HARDENED_CPPFLAGS)
 
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
-EXTRA_LIBRARIES = $(LIBRAVEN_CRYPTO) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_CONSENSUS) $(LIBRAVEN_SERVER) \
-	$(LIBRAVEN_CLI) $(LIBRAVEN_WALLET) $(LIBRAVEN_ZMQ) \
-	$(am__append_11) $(am__append_34)
+EXTRA_LIBRARIES = $(LIBSATO_CRYPTO) $(LIBSATO_UTIL) $(LIBSATO_COMMON) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_SERVER) $(LIBSATO_CLI) \
+	$(LIBSATO_WALLET) $(LIBSATO_ZMQ) $(am__append_11) \
+	$(am__append_34)
 #LIBUNIVALUE = $(UNIVALUE_LIBS)
 LIBUNIVALUE = univalue/libunivalue.la
-RAVEN_INCLUDES = -I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) \
+SATO_INCLUDES = -I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) \
 	$(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) \
 	$(SSL_CFLAGS) -I$(srcdir)/secp256k1/include $(UNIVALUE_CFLAGS)
-LIBRAVEN_SERVER = libsato_server.a
-LIBRAVEN_COMMON = libsato_common.a
-LIBRAVEN_CONSENSUS = libsato_consensus.a
-LIBRAVEN_CLI = libsato_cli.a
-LIBRAVEN_UTIL = libsato_util.a
-LIBRAVEN_CRYPTO = crypto/libsato_crypto.a
-LIBRAVENQT = qt/libsatoqt.a
+LIBSATO_SERVER = libsato_server.a
+LIBSATO_COMMON = libsato_common.a
+LIBSATO_CONSENSUS = libsato_consensus.a
+LIBSATO_CLI = libsato_cli.a
+LIBSATO_UTIL = libsato_util.a
+LIBSATO_CRYPTO = crypto/libsato_crypto.a
+LIBSATOQT = qt/libsatoqt.a
 LIBSECP256K1 = secp256k1/libsecp256k1.la
-LIBRAVEN_ZMQ = libsato_zmq.a
-LIBRAVENCONSENSUS = libsatoconsensus.la
-LIBRAVEN_WALLET = libsato_wallet.a
-lib_LTLIBRARIES = $(LIBRAVENCONSENSUS)
+LIBSATO_ZMQ = libsato_zmq.a
+LIBSATOCONSENSUS = libsatoconsensus.la
+LIBSATO_WALLET = libsato_wallet.a
+lib_LTLIBRARIES = $(LIBSATOCONSENSUS)
 BENCHMARKS = 
 # sato core #
-RAVEN_CORE_H = \
+SATO_CORE_H = \
   addrdb.h \
   addressindex.h \
   algo/sph_groestl.h \
@@ -2403,7 +2403,7 @@ RAVEN_CORE_H = \
 
 
 # server: shared between satod and sato-qt
-libsato_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libsato_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libsato_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_server_a_SOURCES = \
   addrdb.cpp \
@@ -2457,9 +2457,9 @@ libsato_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
-libsato_zmq_a_CPPFLAGS = $(RAVEN_INCLUDES) $(ZMQ_CFLAGS)
+libsato_zmq_a_CPPFLAGS = $(SATO_INCLUDES) $(ZMQ_CFLAGS)
 libsato_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
@@ -2469,7 +2469,7 @@ libsato_zmq_a_SOURCES = \
 
 # wallet: shared between satod and sato-qt, but only linked
 # when wallet enabled
-libsato_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_wallet_a_SOURCES = \
   wallet/crypter.cpp \
@@ -2482,7 +2482,7 @@ libsato_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
   wallet/bip39.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 
 # crypto primitives library
@@ -2520,7 +2520,7 @@ crypto_libsato_crypto_a_SOURCES = crypto/aes.cpp crypto/aes.h \
 	crypto/ethash/progpow_test_vectors.hpp $(am__append_4)
 
 # consensus: shared between all executables that validate any consensus rules.
-libsato_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_consensus_a_SOURCES = \
   amount.h \
@@ -2557,11 +2557,11 @@ libsato_consensus_a_SOURCES = \
   version.h \
   LibBoolEE.cpp \
   LibBoolEE.h \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 
 # common: shared between satod, and sato-qt and non-server tools
-libsato_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_common_a_SOURCES = \
   base58.cpp \
@@ -2580,60 +2580,60 @@ libsato_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libsato_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_util_a_SOURCES = support/lockedpool.cpp chainparamsbase.cpp \
 	clientversion.cpp compat/glibc_sanity.cpp \
 	compat/glibcxx_sanity.cpp fs.cpp random.cpp rpc/protocol.cpp \
 	support/cleanse.cpp sync.cpp threadinterrupt.cpp util.cpp \
 	utilmoneystr.cpp utilstrencodings.cpp utiltime.cpp \
-	$(RAVEN_CORE_H) $(am__append_5)
+	$(SATO_CORE_H) $(am__append_5)
 
 # cli: shared between sato-cli and sato-qt
-libsato_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libsato_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 libsato_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsato_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(RAVEN_CORE_H)
+  $(SATO_CORE_H)
 
 nodist_libsato_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # satod binary #
 satod_SOURCES = satod.cpp $(am__append_7)
-satod_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+satod_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 satod_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 satod_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-satod_LDADD = $(LIBRAVEN_SERVER) $(LIBRAVEN_COMMON) $(LIBUNIVALUE) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_WALLET) $(LIBRAVEN_ZMQ) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) $(LIBLEVELDB) \
+satod_LDADD = $(LIBSATO_SERVER) $(LIBSATO_COMMON) $(LIBUNIVALUE) \
+	$(LIBSATO_UTIL) $(LIBSATO_WALLET) $(LIBSATO_ZMQ) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) $(LIBLEVELDB) \
 	$(LIBLEVELDB_SSE42) $(LIBMEMENV) $(LIBSECP256K1) $(BOOST_LIBS) \
 	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # sato-cli binary #
 sato_cli_SOURCES = sato-cli.cpp $(am__append_8)
-sato_cli_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(EVENT_CFLAGS)
+sato_cli_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(EVENT_CFLAGS)
 sato_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 sato_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-sato_cli_LDADD = $(LIBRAVEN_CLI) $(LIBUNIVALUE) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CRYPTO) $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
+sato_cli_LDADD = $(LIBSATO_CLI) $(LIBUNIVALUE) $(LIBSATO_UTIL) \
+	$(LIBSATO_CRYPTO) $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
 	$(EVENT_LIBS)
 #
 
 # sato-tx binary #
 sato_tx_SOURCES = sato-tx.cpp $(am__append_9)
-sato_tx_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+sato_tx_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 sato_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 sato_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-sato_tx_LDADD = $(LIBUNIVALUE) $(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) $(LIBSECP256K1) \
+sato_tx_LDADD = $(LIBUNIVALUE) $(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) $(LIBSECP256K1) \
 	$(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
@@ -2645,7 +2645,7 @@ libsatoconsensus_la_SOURCES =  \
 	$(am__append_10)
 libsatoconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
 libsatoconsensus_la_LIBADD = $(LIBSECP256K1) $(BOOST_LIBS)
-libsatoconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_RAVEN_INTERNAL
+libsatoconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_SATO_INTERNAL
 libsatoconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 #
@@ -2793,7 +2793,7 @@ RAW_TEST_FILES =
 GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
 
 # test_sato binary #
-RAVEN_TESTS = test/assets/asset_tests.cpp \
+SATO_TESTS = test/assets/asset_tests.cpp \
 	test/assets/serialization_tests.cpp \
 	test/assets/asset_tx_tests.cpp \
 	test/assets/cache_tests.cpp \
@@ -2855,49 +2855,49 @@ RAVEN_TESTS = test/assets/asset_tests.cpp \
 	test/uint256_tests.cpp \
 	test/univalue_tests.cpp test/util_tests.cpp \
 	$(am__append_24)
-test_test_sato_SOURCES = $(RAVEN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_sato_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
+test_test_sato_SOURCES = $(SATO_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_sato_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
 test_test_sato_LDADD = $(am__append_25) \
-	$(LIBRAVEN_SERVER) $(LIBRAVEN_CLI) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+	$(LIBSATO_SERVER) $(LIBSATO_CLI) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(LIBUNIVALUE) $(LIBLEVELDB) \
 	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
 	$(BOOST_LIBS) \
 	$(BOOST_UNIT_TEST_FRAMEWORK_LIB) \
 	$(LIBSECP256K1) $(EVENT_LIBS) \
-	$(EVENT_PTHREADS_LIBS) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
-	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
-	$(MINIUPNPC_LIBS) $(am__append_26)
+	$(EVENT_PTHREADS_LIBS) $(LIBSATO_CONSENSUS) \
+	$(LIBSATO_CRYPTO) $(BDB_LIBS) $(SSL_LIBS) \
+	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
+	$(am__append_26)
 test_test_sato_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 test_test_sato_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
 #
 
 # test_sato_fuzzy binary #
 test_test_sato_fuzzy_SOURCES = test/test_sato_fuzzy.cpp
-test_test_sato_fuzzy_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+test_test_sato_fuzzy_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 test_test_sato_fuzzy_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 test_test_sato_fuzzy_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 test_test_sato_fuzzy_LDADD = $(LIBUNIVALUE) \
-	$(LIBRAVEN_SERVER) $(LIBRAVEN_COMMON) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_CONSENSUS) \
-	$(LIBRAVEN_CRYPTO) $(LIBSECP256K1) \
+	$(LIBSATO_SERVER) $(LIBSATO_COMMON) \
+	$(LIBSATO_UTIL) $(LIBSATO_CONSENSUS) \
+	$(LIBSATO_CRYPTO) $(LIBSECP256K1) \
 	$(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # test_sato_hash binary #
 test_test_sato_hash_SOURCES = test/test_sato_hash.cpp
-test_test_sato_hash_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+test_test_sato_hash_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES)
 test_test_sato_hash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 test_test_sato_hash_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_AP_LDFLAGS)
 test_test_sato_hash_LDADD = $(LIBUNIVALUE) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(CRYPTO_LIBS)
 #
 nodist_test_test_sato_SOURCES = $(GENERATED_TEST_FILES)
-CLEAN_RAVEN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
+CLEAN_SATO_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
 BENCH_SRCDIR = bench
 BENCH_BINARY = bench/bench_sato$(EXEEXT)
 RAW_BENCH_FILES = \
@@ -2917,11 +2917,11 @@ bench_bench_sato_SOURCES = $(RAW_BENCH_FILES) \
 	bench/perf.h bench/prevector_destructor.cpp \
 	$(am__append_30)
 nodist_bench_bench_sato_SOURCES = $(GENERATED_BENCH_FILES)
-bench_bench_sato_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_sato_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
 bench_bench_sato_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bench_bench_sato_LDADD = $(LIBRAVEN_SERVER) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+bench_bench_sato_LDADD = $(LIBSATO_SERVER) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(LIBLEVELDB) $(LIBLEVELDB_SSE42) \
 	$(LIBMEMENV) $(LIBSECP256K1) $(LIBUNIVALUE) \
 	$(am__append_29) $(am__append_31) \
@@ -2929,7 +2929,7 @@ bench_bench_sato_LDADD = $(LIBRAVEN_SERVER) \
 	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 bench_bench_sato_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-CLEAN_RAVEN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
+CLEAN_SATO_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
 
 # sato qt core #
 QT_TS = \
@@ -3109,7 +3109,7 @@ QT_MOC_CPP = \
   qt/moc_sendassetsentry.cpp \
   qt/moc_mnemonicdialog.cpp
 
-RAVEN_MM = \
+SATO_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
@@ -3128,7 +3128,7 @@ QT_QRC_LOCALE = qt/sato_locale.qrc
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
-RAVEN_QT_H = \
+SATO_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
@@ -3300,7 +3300,7 @@ RES_ICONS = \
   qt/res/fonts/OpenSans-SemiBold.ttf \
   qt/res/fonts/OpenSans-SemiBoldItalic.ttf
 
-RAVEN_QT_BASE_CPP = \
+SATO_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
   qt/satoaddressvalidator.cpp \
   qt/satoamountfield.cpp \
@@ -3326,8 +3326,8 @@ RAVEN_QT_BASE_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-RAVEN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
-RAVEN_QT_WALLET_CPP = \
+SATO_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+SATO_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -3368,19 +3368,19 @@ RAVEN_QT_WALLET_CPP = \
   qt/walletview.cpp \
   qt/mnemonicdialog.cpp
 
-RAVEN_QT_CPP = $(RAVEN_QT_BASE_CPP) $(am__append_35) \
+SATO_QT_CPP = $(SATO_QT_BASE_CPP) $(am__append_35) \
 	$(am__append_36)
 RES_IMAGES = 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
-RAVEN_RC = qt/res/sato-qt-res.rc
-RAVEN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+SATO_RC = qt/res/sato-qt-res.rc
+SATO_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
-qt_libsatoqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(RAVEN_QT_INCLUDES) \
+qt_libsatoqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(SATO_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
 qt_libsatoqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_libsatoqt_a_SOURCES = $(RAVEN_QT_CPP) $(RAVEN_QT_H) $(QT_FORMS_UI) \
+qt_libsatoqt_a_SOURCES = $(SATO_QT_CPP) $(SATO_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 
 nodist_qt_libsatoqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
@@ -3391,21 +3391,21 @@ nodist_qt_libsatoqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
 QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
 
 # sato-qt binary #
-qt_sato_qt_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(RAVEN_QT_INCLUDES) \
+qt_sato_qt_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(SATO_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
 qt_sato_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 qt_sato_qt_SOURCES = qt/sato.cpp $(am__append_37) \
 	$(am__append_38)
-qt_sato_qt_LDADD = qt/libsatoqt.a $(LIBRAVEN_SERVER) \
+qt_sato_qt_LDADD = qt/libsatoqt.a $(LIBSATO_SERVER) \
 	$(am__append_39) $(am__append_40) \
-	$(LIBRAVEN_CLI) $(LIBRAVEN_COMMON) \
-	$(LIBRAVEN_UTIL) $(LIBRAVEN_CONSENSUS) \
-	$(LIBRAVEN_CRYPTO) $(LIBUNIVALUE) \
-	$(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
-	$(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) \
-	$(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) \
-	$(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
+	$(LIBSATO_CLI) $(LIBSATO_COMMON) \
+	$(LIBSATO_UTIL) $(LIBSATO_CONSENSUS) \
+	$(LIBSATO_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) \
+	$(LIBLEVELDB_SSE42) $(LIBMEMENV) $(BOOST_LIBS) \
+	$(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) \
+	$(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) \
+	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
 	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
 	$(EVENT_LIBS)
 qt_sato_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
@@ -3426,13 +3426,13 @@ TEST_QT_H = \
   qt/test/paymentservertests.h \
   qt/test/wallettests.h
 
-TEST_RAVEN_CPP = \
+TEST_SATO_CPP = \
   test/test_sato.cpp
 
-TEST_RAVEN_H = \
+TEST_SATO_H = \
   test/test_sato.h
 
-qt_test_test_sato_qt_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(RAVEN_QT_INCLUDES) \
+qt_test_test_sato_qt_CPPFLAGS = $(AM_CPPFLAGS) $(SATO_INCLUDES) $(SATO_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
 
 qt_test_test_sato_qt_SOURCES =  \
@@ -3440,14 +3440,14 @@ qt_test_test_sato_qt_SOURCES =  \
 	qt/test/rpcnestedtests.cpp \
 	qt/test/test_main.cpp \
 	qt/test/uritests.cpp $(TEST_QT_H) \
-	$(TEST_RAVEN_CPP) $(TEST_RAVEN_H) \
+	$(TEST_SATO_CPP) $(TEST_SATO_H) \
 	$(am__append_45)
 nodist_qt_test_test_sato_qt_SOURCES = $(TEST_QT_MOC_CPP)
-qt_test_test_sato_qt_LDADD = $(LIBRAVENQT) \
-	$(LIBRAVEN_SERVER) $(am__append_46) \
-	$(am__append_47) $(LIBRAVEN_CLI) \
-	$(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) \
-	$(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) \
+qt_test_test_sato_qt_LDADD = $(LIBSATOQT) \
+	$(LIBSATO_SERVER) $(am__append_46) \
+	$(am__append_47) $(LIBSATO_CLI) \
+	$(LIBSATO_COMMON) $(LIBSATO_UTIL) \
+	$(LIBSATO_CONSENSUS) $(LIBSATO_CRYPTO) \
 	$(LIBUNIVALUE) $(LIBLEVELDB) \
 	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
 	$(BOOST_LIBS) $(QT_DBUS_LIBS) \
@@ -3458,7 +3458,7 @@ qt_test_test_sato_qt_LDADD = $(LIBRAVENQT) \
 	$(EVENT_LIBS)
 qt_test_test_sato_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 qt_test_test_sato_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-CLEAN_RAVEN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
+CLEAN_SATO_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 all: all-recursive
 
 .SUFFIXES:
@@ -14506,7 +14506,7 @@ check-security: $(bin_PROGRAMS)
 	@test -f $(PROTOC)
 	$(AM_V_GEN) $(PROTOC) --cpp_out=$(@D) --proto_path=$(<D) $<
 
-$(RAVEN_TESTS): $(GENERATED_TEST_FILES)
+$(SATO_TESTS): $(GENERATED_TEST_FILES)
 
 sato_test: $(TEST_BINARY)
 
@@ -14514,7 +14514,7 @@ sato_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
 sato_test_clean : FORCE
-	rm -f $(CLEAN_RAVEN_TEST) $(test_test_sato_OBJECTS) $(TEST_BINARY)
+	rm -f $(CLEAN_SATO_TEST) $(test_test_sato_OBJECTS) $(TEST_BINARY)
 
 check-local:
 	@echo "Running test/util/sato-util-test.py..."
@@ -14540,7 +14540,7 @@ bench: $(BENCH_BINARY) FORCE
 	$(BENCH_BINARY)
 
 sato_bench_clean : FORCE
-	rm -f $(CLEAN_RAVEN_BENCH) $(bench_bench_sato_OBJECTS) $(BENCH_BINARY)
+	rm -f $(CLEAN_SATO_BENCH) $(bench_bench_sato_OBJECTS) $(BENCH_BINARY)
 
 %.raw.h: %.raw
 	@$(MKDIR_P) $(@D)
@@ -14567,7 +14567,7 @@ $(srcdir)/qt/satostrings.cpp: $(libsato_server_a_SOURCES) $(libsato_wallet_a_SOU
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/satostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(RAVEN_QT_BASE_CPP) qt/sato.cpp $(RAVEN_QT_WINDOWS_CPP) $(RAVEN_QT_WALLET_CPP) $(RAVEN_QT_H) $(RAVEN_MM)
+translate: $(srcdir)/qt/satostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(SATO_QT_BASE_CPP) qt/sato.cpp $(SATO_QT_WINDOWS_CPP) $(SATO_QT_WALLET_CPP) $(SATO_QT_H) $(SATO_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/sato_en.ts
 
@@ -14584,7 +14584,7 @@ $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) 
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 sato_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libsatoqt_a_OBJECTS) $(qt_sato_qt_OBJECTS) qt/sato-qt$(EXEEXT) $(LIBRAVENQT)
+	rm -f $(CLEAN_QT) $(qt_libsatoqt_a_OBJECTS) $(qt_sato_qt_OBJECTS) qt/sato-qt$(EXEEXT) $(LIBSATOQT)
 
 sato_qt : qt/sato-qt$(EXEEXT)
 
@@ -14612,7 +14612,7 @@ test_sato_qt_check : qt/test/test_sato-qt$(EXEEXT) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
 test_sato_qt_clean: FORCE
-	rm -f $(CLEAN_RAVEN_QT_TEST) $(qt_test_test_sato_qt_OBJECTS)
+	rm -f $(CLEAN_SATO_QT_TEST) $(qt_test_test_sato_qt_OBJECTS)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

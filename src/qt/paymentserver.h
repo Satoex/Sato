@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_PAYMENTSERVER_H
-#define RAVEN_QT_PAYMENTSERVER_H
+#ifndef SATO_QT_PAYMENTSERVER_H
+#define SATO_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
 // sato: URIs
@@ -146,4 +146,4 @@ private:
     OptionsModel *optionsModel;
 };
 
-#endif // RAVEN_QT_PAYMENTSERVER_H
+#endif // SATO_QT_PAYMENTSERVER_H

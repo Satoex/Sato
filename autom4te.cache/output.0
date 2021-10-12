@@ -656,10 +656,10 @@ HARDENED_CXXFLAGS
 ERROR_CXXFLAGS
 COMPAT_LDFLAGS
 RELDFLAGS
-RAVEN_TX_NAME
-RAVEN_CLI_NAME
-RAVEN_GUI_NAME
-RAVEN_DAEMON_NAME
+SATO_TX_NAME
+SATO_CLI_NAME
+SATO_GUI_NAME
+SATO_DAEMON_NAME
 COPYRIGHT_HOLDERS_FINAL
 COPYRIGHT_HOLDERS_SUBSTITUTION
 COPYRIGHT_HOLDERS
@@ -699,14 +699,14 @@ TARGET_DARWIN_FALSE
 TARGET_DARWIN_TRUE
 ENABLE_ZMQ_FALSE
 ENABLE_ZMQ_TRUE
-BUILD_RAVEN_LIBS_FALSE
-BUILD_RAVEN_LIBS_TRUE
-BUILD_RAVEN_TX_FALSE
-BUILD_RAVEN_TX_TRUE
-BUILD_RAVEN_CLI_FALSE
-BUILD_RAVEN_CLI_TRUE
-BUILD_RAVEND_FALSE
-BUILD_RAVEND_TRUE
+BUILD_SATO_LIBS_FALSE
+BUILD_SATO_LIBS_TRUE
+BUILD_SATO_TX_FALSE
+BUILD_SATO_TX_TRUE
+BUILD_SATO_CLI_FALSE
+BUILD_SATO_CLI_TRUE
+BUILD_SATOD_FALSE
+BUILD_SATOD_TRUE
 PROTOC
 EMBEDDED_UNIVALUE_FALSE
 EMBEDDED_UNIVALUE_TRUE
@@ -3009,10 +3009,10 @@ ac_configure="$SHELL $ac_aux_dir/configure"  # Please don't use this var.
 
 
 
-RAVEN_DAEMON_NAME=satod
-RAVEN_GUI_NAME=sato-qt
-RAVEN_CLI_NAME=sato-cli
-RAVEN_TX_NAME=sato-tx
+SATO_DAEMON_NAME=satod
+SATO_GUI_NAME=sato-qt
+SATO_CLI_NAME=sato-cli
+SATO_TX_NAME=sato-tx
 
 
 if test "x${ARFLAGS+set}" != "xset"; then
@@ -30327,11 +30327,11 @@ $as_echo "$as_me: WARNING: PROTOC not found; sato-qt frontend will not be built"
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build satod" >&5
 $as_echo_n "checking whether to build satod... " >&6; }
  if test x$build_satod = xyes; then
-  BUILD_RAVEND_TRUE=
-  BUILD_RAVEND_FALSE='#'
+  BUILD_SATOD_TRUE=
+  BUILD_SATOD_FALSE='#'
 else
-  BUILD_RAVEND_TRUE='#'
-  BUILD_RAVEND_FALSE=
+  BUILD_SATOD_TRUE='#'
+  BUILD_SATOD_FALSE=
 fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $build_satod" >&5
@@ -30340,11 +30340,11 @@ $as_echo "$build_satod" >&6; }
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build sato-cli" >&5
 $as_echo_n "checking whether to build sato-cli... " >&6; }
  if test x$build_sato_cli = xyes; then
-  BUILD_RAVEN_CLI_TRUE=
-  BUILD_RAVEN_CLI_FALSE='#'
+  BUILD_SATO_CLI_TRUE=
+  BUILD_SATO_CLI_FALSE='#'
 else
-  BUILD_RAVEN_CLI_TRUE='#'
-  BUILD_RAVEN_CLI_FALSE=
+  BUILD_SATO_CLI_TRUE='#'
+  BUILD_SATO_CLI_FALSE=
 fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $build_sato_cli" >&5
@@ -30353,11 +30353,11 @@ $as_echo "$build_sato_cli" >&6; }
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build sato-tx" >&5
 $as_echo_n "checking whether to build sato-tx... " >&6; }
  if test x$build_sato_tx = xyes; then
-  BUILD_RAVEN_TX_TRUE=
-  BUILD_RAVEN_TX_FALSE='#'
+  BUILD_SATO_TX_TRUE=
+  BUILD_SATO_TX_FALSE='#'
 else
-  BUILD_RAVEN_TX_TRUE='#'
-  BUILD_RAVEN_TX_FALSE=
+  BUILD_SATO_TX_TRUE='#'
+  BUILD_SATO_TX_FALSE=
 fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $build_sato_tx" >&5
@@ -30366,11 +30366,11 @@ $as_echo "$build_sato_tx" >&6; }
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build libraries" >&5
 $as_echo_n "checking whether to build libraries... " >&6; }
  if test x$build_sato_libs = xyes; then
-  BUILD_RAVEN_LIBS_TRUE=
-  BUILD_RAVEN_LIBS_FALSE='#'
+  BUILD_SATO_LIBS_TRUE=
+  BUILD_SATO_LIBS_FALSE='#'
 else
-  BUILD_RAVEN_LIBS_TRUE='#'
-  BUILD_RAVEN_LIBS_FALSE=
+  BUILD_SATO_LIBS_TRUE='#'
+  BUILD_SATO_LIBS_FALSE=
 fi
 
 if test x$build_sato_libs = xyes; then
@@ -30981,20 +30981,20 @@ if test -z "${EMBEDDED_UNIVALUE_TRUE}" && test -z "${EMBEDDED_UNIVALUE_FALSE}"; 
   as_fn_error $? "conditional \"EMBEDDED_UNIVALUE\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${BUILD_RAVEND_TRUE}" && test -z "${BUILD_RAVEND_FALSE}"; then
-  as_fn_error $? "conditional \"BUILD_RAVEND\" was never defined.
+if test -z "${BUILD_SATOD_TRUE}" && test -z "${BUILD_SATOD_FALSE}"; then
+  as_fn_error $? "conditional \"BUILD_SATOD\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${BUILD_RAVEN_CLI_TRUE}" && test -z "${BUILD_RAVEN_CLI_FALSE}"; then
-  as_fn_error $? "conditional \"BUILD_RAVEN_CLI\" was never defined.
+if test -z "${BUILD_SATO_CLI_TRUE}" && test -z "${BUILD_SATO_CLI_FALSE}"; then
+  as_fn_error $? "conditional \"BUILD_SATO_CLI\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${BUILD_RAVEN_TX_TRUE}" && test -z "${BUILD_RAVEN_TX_FALSE}"; then
-  as_fn_error $? "conditional \"BUILD_RAVEN_TX\" was never defined.
+if test -z "${BUILD_SATO_TX_TRUE}" && test -z "${BUILD_SATO_TX_FALSE}"; then
+  as_fn_error $? "conditional \"BUILD_SATO_TX\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${BUILD_RAVEN_LIBS_TRUE}" && test -z "${BUILD_RAVEN_LIBS_FALSE}"; then
-  as_fn_error $? "conditional \"BUILD_RAVEN_LIBS\" was never defined.
+if test -z "${BUILD_SATO_LIBS_TRUE}" && test -z "${BUILD_SATO_LIBS_FALSE}"; then
+  as_fn_error $? "conditional \"BUILD_SATO_LIBS\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${ENABLE_ZMQ_TRUE}" && test -z "${ENABLE_ZMQ_FALSE}"; then

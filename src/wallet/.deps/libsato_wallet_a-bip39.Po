@@ -156,23 +156,23 @@ wallet/libsato_wallet_a-bip39.o: wallet/bip39.cpp wallet/bip39.h \
  /usr/share/mingw-w64/include/sec_api/string_s.h compat/endian.h \
  compat/byteswap.h uint256.h /usr/share/mingw-w64/include/assert.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstring \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/evp.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/opensslconf.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/ossl_typ.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/e_os2.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/symhacks.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/bio.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/evp.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/opensslconf.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/ossl_typ.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/e_os2.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/symhacks.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/bio.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdarg.h \
  /usr/share/mingw-w64/include/stdarg.h \
  /usr/share/mingw-w64/include/_mingw_stdarg.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/crypto.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/stack.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/safestack.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/opensslv.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/objects.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/obj_mac.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/asn1.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/bn.h
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/crypto.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/stack.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/safestack.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/opensslv.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/objects.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/obj_mac.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/asn1.h \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/bn.h
 
 wallet/bip39.h:
 
@@ -506,17 +506,17 @@ uint256.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstring:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/evp.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/evp.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/opensslconf.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/opensslconf.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/ossl_typ.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/ossl_typ.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/e_os2.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/e_os2.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/symhacks.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/symhacks.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/bio.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/bio.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdarg.h:
 
@@ -524,18 +524,18 @@ uint256.h:
 
 /usr/share/mingw-w64/include/_mingw_stdarg.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/crypto.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/crypto.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/stack.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/stack.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/safestack.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/safestack.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/opensslv.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/opensslv.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/objects.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/objects.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/obj_mac.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/obj_mac.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/asn1.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/asn1.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/openssl/bn.h:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/openssl/bn.h:

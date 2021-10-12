@@ -140,9 +140,9 @@ bench/bench_bench_sato-rollingbloom.o: bench/rollingbloom.cpp \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/aligned_buffer.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_map.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp \
  bloom.h serialize.h compat/endian.h config/sato-config.h \
  compat/byteswap.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/algorithm \
@@ -461,11 +461,11 @@ bench/bench.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp:
 
 bloom.h:
 

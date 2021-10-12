@@ -126,5 +126,5 @@ int satoconsensus_verify_script(const unsigned char *scriptPubKey, unsigned int 
 unsigned int satoconsensus_version()
 {
     // Just use the API version for now
-    return RAVENCONSENSUS_API_VER;
+    return SATOCONSENSUS_API_VER;
 }

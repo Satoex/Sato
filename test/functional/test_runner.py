@@ -266,7 +266,7 @@ def main():
     # Check that the build was configured with wallet, utils, and satod
     enable_wallet = config["components"].getboolean("ENABLE_WALLET")
     enable_cli = config["components"].getboolean("ENABLE_UTILS")
-    enable_satod = config["components"].getboolean("ENABLE_RAVEND")
+    enable_satod = config["components"].getboolean("ENABLE_SATOD")
     if not (enable_wallet and enable_cli and enable_satod):
         print("No functional tests to run. Wallet, utils, and satod must all be enabled")
         print("Rerun `configure` with --enable-wallet, --with-cli and --with-daemon and rerun make")
@@ -375,9 +375,9 @@ def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, use_term_control, j
         print("%sWARNING!%s There is a cache directory here: %s. If tests fail unexpectedly, try deleting the cache directory." % (BOLD[1], BOLD[0], cache_dir))
 
     #Set env vars
-    if "RAVEND" not in os.environ:
-        os.environ["RAVEND"] = build_dir + '/src/satod' + exeext
-        os.environ["RAVENCLI"] = build_dir + '/src/sato-cli' + exeext
+    if "SATOD" not in os.environ:
+        os.environ["SATOD"] = build_dir + '/src/satod' + exeext
+        os.environ["SATOCLI"] = build_dir + '/src/sato-cli' + exeext
 
     tests_dir = src_dir + '/test/functional/'
 

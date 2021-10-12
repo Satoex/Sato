@@ -1,4 +1,4 @@
-prefix=/root/satest/depends/x86_64-w64-mingw32
+prefix=/root/Sato/depends/x86_64-w64-mingw32
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

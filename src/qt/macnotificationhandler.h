@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_MACNOTIFICATIONHANDLER_H
-#define RAVEN_QT_MACNOTIFICATIONHANDLER_H
+#ifndef SATO_QT_MACNOTIFICATIONHANDLER_H
+#define SATO_QT_MACNOTIFICATIONHANDLER_H
 
 #include <QObject>
 
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif // RAVEN_QT_MACNOTIFICATIONHANDLER_H
+#endif // SATO_QT_MACNOTIFICATIONHANDLER_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_RAVENGUI_H
-#define RAVEN_QT_RAVENGUI_H
+#ifndef SATO_QT_SATOGUI_H
+#define SATO_QT_SATOGUI_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/sato-config.h"
@@ -325,4 +325,4 @@ private Q_SLOTS:
     void onMenuSelection(QAction* action);
 };
 
-#endif // RAVEN_QT_RAVENGUI_H
+#endif // SATO_QT_SATOGUI_H

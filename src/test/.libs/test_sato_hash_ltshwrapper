@@ -188,7 +188,7 @@ func_exec_program ()
 
   if test -f "$progdir/$program"; then
     # Add the dll search path components to the executable PATH
-    PATH=/root/satest/depends/x86_64-w64-mingw32/share/../lib:/root/satest/depends/x86_64-w64-mingw32/share/../bin:$PATH
+    PATH=/root/Sato/depends/x86_64-w64-mingw32/share/../lib:/root/Sato/depends/x86_64-w64-mingw32/share/../bin:$PATH
 
     if test "$libtool_execute_magic" != "%%%MAGIC variable%%%"; then
       # Run the actual program with our arguments.

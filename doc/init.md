@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy satod.init to /etc/init.d/satod. Test by running `service satod start`.
 
 Using this script, you can adjust the path and flags to the satod program by
-setting the RAVEND and FLAGS environment variables in the file
+setting the SATOD and FLAGS environment variables in the file
 /etc/sysconfig/satod. You can also use the DAEMONOPTS environment variable here.
 
 ### Mac OS X

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_CONSENSUS_PARAMS_H
-#define RAVEN_CONSENSUS_PARAMS_H
+#ifndef SATO_CONSENSUS_PARAMS_H
+#define SATO_CONSENSUS_PARAMS_H
 
 #include "uint256.h"
 #include <map>
@@ -80,4 +80,4 @@ struct Params {
 };
 } // namespace Consensus
 
-#endif // RAVEN_CONSENSUS_PARAMS_H
+#endif // SATO_CONSENSUS_PARAMS_H

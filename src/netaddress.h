@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_NETADDRESS_H
-#define RAVEN_NETADDRESS_H
+#ifndef SATO_NETADDRESS_H
+#define SATO_NETADDRESS_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/sato-config.h"
@@ -175,4 +175,4 @@ class CService : public CNetAddr
         }
 };
 
-#endif // RAVEN_NETADDRESS_H
+#endif // SATO_NETADDRESS_H

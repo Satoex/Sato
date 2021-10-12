@@ -1,23 +1,23 @@
 dnl require autoconf 2.60 (AS_ECHO/AS_ECHO_N)
 AC_PREREQ([2.60])
 define(_CLIENT_VERSION_MAJOR, 1)
-define(_CLIENT_VERSION_MINOR, 0)
-define(_CLIENT_VERSION_REVISION, 0)
+define(_CLIENT_VERSION_MINOR, 1)
+define(_CLIENT_VERSION_REVISION, 4)
 define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2021)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Sato Core]])
-AC_INIT([Sato Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/Satoex/Sato-Core/issues],[sato],[https://satoex.com/sato])
+AC_INIT([Sato Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/Satoex/Sato/issues],[sato],[https://satoex.com/sato])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/sato-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-RAVEN_DAEMON_NAME=satod
-RAVEN_GUI_NAME=sato-qt
-RAVEN_CLI_NAME=sato-cli
-RAVEN_TX_NAME=sato-tx
+SATO_DAEMON_NAME=satod
+SATO_GUI_NAME=sato-qt
+SATO_CLI_NAME=sato-cli
+SATO_TX_NAME=sato-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -27,9 +27,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef RAVEN_CONFIG_H])
-AH_TOP([#define RAVEN_CONFIG_H])
-AH_BOTTOM([#endif //RAVEN_CONFIG_H])
+AH_TOP([#ifndef SATO_CONFIG_H])
+AH_TOP([#define SATO_CONFIG_H])
+AH_BOTTOM([#endif //SATO_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -720,7 +720,7 @@ AC_SUBST(LIBMEMENV)
 
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
-    RAVEN_FIND_BDB48
+    SATO_FIND_BDB48
 fi
 
 dnl Check for libminiupnpc (optional)
@@ -732,10 +732,10 @@ if test x$use_upnp != xno; then
   )
 fi
 
-RAVEN_QT_INIT
+SATO_QT_INIT
 
 dnl sets $sato_enable_qt, $sato_enable_qt_test, $sato_enable_qt_dbus
-RAVEN_QT_CONFIGURE([$use_pkgconfig], [qt5])
+SATO_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
 if test x$build_sato_cli$build_sato_tx$build_satod$sato_enable_qt$use_tests$use_bench = xnononononono; then
     use_boost=no
@@ -919,9 +919,9 @@ if test x$use_pkgconfig = xyes; then
     [
       PKG_CHECK_MODULES([SSL], [libssl],, [AC_MSG_ERROR(openssl  not found.)])
       PKG_CHECK_MODULES([CRYPTO], [libcrypto],,[AC_MSG_ERROR(libcrypto  not found.)])
-      RAVEN_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [RAVEN_QT_FAIL(libprotobuf not found)])])
+      SATO_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [SATO_QT_FAIL(libprotobuf not found)])])
       if test x$use_qr != xno; then
-        RAVEN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+        SATO_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
       if test x$build_sato_cli$build_sato_tx$build_satod$sato_enable_qt$use_tests != xnonononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
@@ -979,10 +979,10 @@ else
     esac
   fi
 
-  RAVEN_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], RAVEN_QT_FAIL(libprotobuf not found)))
+  SATO_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], SATO_QT_FAIL(libprotobuf not found)))
   if test x$use_qr != xno; then
-    RAVEN_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
-    RAVEN_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
+    SATO_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
+    SATO_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
   fi
 fi
 
@@ -1041,22 +1041,22 @@ AM_CONDITIONAL([EMBEDDED_UNIVALUE],[test x$need_bundled_univalue = xyes])
 AC_SUBST(UNIVALUE_CFLAGS)
 AC_SUBST(UNIVALUE_LIBS)
 
-RAVEN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
+SATO_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
 AC_MSG_CHECKING([whether to build satod])
-AM_CONDITIONAL([BUILD_RAVEND], [test x$build_satod = xyes])
+AM_CONDITIONAL([BUILD_SATOD], [test x$build_satod = xyes])
 AC_MSG_RESULT($build_satod)
 
 AC_MSG_CHECKING([whether to build sato-cli])
-AM_CONDITIONAL([BUILD_RAVEN_CLI], [test x$build_sato_cli = xyes])
+AM_CONDITIONAL([BUILD_SATO_CLI], [test x$build_sato_cli = xyes])
 AC_MSG_RESULT($build_sato_cli)
 
 AC_MSG_CHECKING([whether to build sato-tx])
-AM_CONDITIONAL([BUILD_RAVEN_TX], [test x$build_sato_tx = xyes])
+AM_CONDITIONAL([BUILD_SATO_TX], [test x$build_sato_tx = xyes])
 AC_MSG_RESULT($build_sato_tx)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_RAVEN_LIBS], [test x$build_sato_libs = xyes])
+AM_CONDITIONAL([BUILD_SATO_LIBS], [test x$build_sato_libs = xyes])
 if test x$build_sato_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
   AC_CONFIG_FILES([libsatoconsensus.pc:libsatoconsensus.pc.in])
@@ -1217,10 +1217,10 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(RAVEN_DAEMON_NAME)
-AC_SUBST(RAVEN_GUI_NAME)
-AC_SUBST(RAVEN_CLI_NAME)
-AC_SUBST(RAVEN_TX_NAME)
+AC_SUBST(SATO_DAEMON_NAME)
+AC_SUBST(SATO_GUI_NAME)
+AC_SUBST(SATO_CLI_NAME)
+AC_SUBST(SATO_TX_NAME)
 
 AC_SUBST(RELDFLAGS)
 AC_SUBST(COMPAT_LDFLAGS)

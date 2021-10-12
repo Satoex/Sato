@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_OPTIONSDIALOG_H
-#define RAVEN_QT_OPTIONSDIALOG_H
+#ifndef SATO_QT_OPTIONSDIALOG_H
+#define SATO_QT_OPTIONSDIALOG_H
 
 #include <QDialog>
 #include <QValidator>
@@ -69,4 +69,4 @@ private:
     QDataWidgetMapper *mapper;
 };
 
-#endif // RAVEN_QT_OPTIONSDIALOG_H
+#endif // SATO_QT_OPTIONSDIALOG_H

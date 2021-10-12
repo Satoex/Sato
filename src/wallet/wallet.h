@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_WALLET_WALLET_H
-#define RAVEN_WALLET_WALLET_H
+#ifndef SATO_WALLET_WALLET_H
+#define SATO_WALLET_WALLET_H
 
 #include "amount.h"
 #include "policy/feerate.h"
@@ -1315,4 +1315,4 @@ bool CWallet::DummySignTx(CMutableTransaction &txNew, const ContainerType &coins
     return allSigned;
 }
 
-#endif // RAVEN_WALLET_WALLET_H
+#endif // SATO_WALLET_WALLET_H

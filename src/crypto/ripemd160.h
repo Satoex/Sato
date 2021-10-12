@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_CRYPTO_RIPEMD160_H
-#define RAVEN_CRYPTO_RIPEMD160_H
+#ifndef SATO_CRYPTO_RIPEMD160_H
+#define SATO_CRYPTO_RIPEMD160_H
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -26,4 +26,4 @@ public:
     CRIPEMD160& Reset();
 };
 
-#endif // RAVEN_CRYPTO_RIPEMD160_H
+#endif // SATO_CRYPTO_RIPEMD160_H

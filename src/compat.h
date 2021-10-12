@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_COMPAT_H
-#define RAVEN_COMPAT_H
+#ifndef SATO_COMPAT_H
+#define SATO_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/sato-config.h"
@@ -101,4 +101,4 @@ bool static inline IsSelectableSocket(const SOCKET& s) {
 #endif
 }
 
-#endif // RAVEN_COMPAT_H
+#endif // SATO_COMPAT_H

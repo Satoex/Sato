@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2017-2020 The Sato Core developers
+// Copyright (c) 2021 The Sato Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -182,8 +182,15 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x0b22541da6ad305c4b575f99aedff3d94a049c97bbbaabc278cfa0f9e11e8488"));
 
         vSeeds.emplace_back("173.249.40.91", false);
-		vSeeds.emplace_back("161.97.177.107", false);
-		vSeeds.emplace_back("144.91.121.51", false);
+	vSeeds.emplace_back("65.21.253.196", false);
+        vSeeds.emplace_back("seed1.satonetwork.com", false);
+        vSeeds.emplace_back("seed2.satonetwork.com", false);
+        vSeeds.emplace_back("seed3.satonetwork.com", false);        
+	vSeeds.emplace_back("188.34.196.154", false);
+        vSeeds.emplace_back("60.119.139.94", false);
+        vSeeds.emplace_back("217.227.150.112", false);
+        vSeeds.emplace_back("86.127.106.0", false);
+        vSeeds.emplace_back("190.2.133.225", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122);
@@ -203,7 +210,15 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                { 0, uint256S("0x00000018419cc48e14c5a8909e0599d4d7189439ae5a16cffb31df833f2ee0b2")}
+                { 0, uint256S("0x00000018419cc48e14c5a8909e0599d4d7189439ae5a16cffb31df833f2ee0b2")},
+		    { 56565, uint256S("0x000000002362279aca6f0a6e4495f406ed00f638f5318ed9fae3adb37b5751ba")},
+		    { 67786, uint256S("0x00000000008be3df3379c4a463b88479bd90b02e513cf12619f24e00df2c8be6")},
+		    { 145050, uint256S("0x000000000f1ca008c002e6a39767e5f3f1f469883bebe23df33bb211ed271b51")},
+		    { 161645, uint256S("0x000000000f11dbc3e1bb1625b102adc8eb51ecee56cfdfac7863d56ec03aec34")},
+		    { 188439, uint256S("0x0000000000f80ab282b3cfefa974ec89663f569289ea61d7d1d7ce92ceaf0423")},
+		    { 231687, uint256S("0x0000000004e56363bbf2b9009d95760c917165f5e4c03143c3d3854af3d48a37")},
+		    { 231814, uint256S("0x000000001c65ef30acc43088044eabf8ba23e834fc616abee665a73773b384e2")},
+		    { 261718, uint256S("0x0000000010d94df6cc5b75392fd52c122bd517a909186ded74a39a8493c593d0")}
             }
         };
 
@@ -448,9 +463,9 @@ public:
         consensus.defaultAssumeValid = uint256S("0x2e663412a0826524bb64783ca46dfadf79b4385f83deb64f6e695af23921ec9d");
 
         pchMessageStart[0] = 0x63; // S
-        pchMessageStart[1] = 0x56; // P
-        pchMessageStart[2] = 0x48; // L
-        pchMessageStart[3] = 0x61; // R
+        pchMessageStart[1] = 0x56; // A
+        pchMessageStart[2] = 0x65; // T
+        pchMessageStart[3] = 0x65; // T
         nDefaultPort = 23333;
         nPruneAfterHeight = 1000;
 		

@@ -3,40 +3,40 @@
 # backward compatibility for existing gentoo layout 
 #
 if [ -d "/var/lib/sato/.sato" ]; then
-	RAVEND_DEFAULT_DATADIR="/var/lib/sato/.sato"
+	SATOD_DEFAULT_DATADIR="/var/lib/sato/.sato"
 else
-	RAVEND_DEFAULT_DATADIR="/var/lib/satod"
+	SATOD_DEFAULT_DATADIR="/var/lib/satod"
 fi
 
-RAVEND_CONFIGFILE=${RAVEND_CONFIGFILE:-/etc/sato/sato.conf}
-RAVEND_PIDDIR=${RAVEND_PIDDIR:-/var/run/satod}
-RAVEND_PIDFILE=${RAVEND_PIDFILE:-${RAVEND_PIDDIR}/satod.pid}
-RAVEND_DATADIR=${RAVEND_DATADIR:-${RAVEND_DEFAULT_DATADIR}}
-RAVEND_USER=${RAVEND_USER:-${RAVEN_USER:-sato}}
-RAVEND_GROUP=${RAVEND_GROUP:-sato}
-RAVEND_BIN=${RAVEND_BIN:-/usr/bin/satod}
-RAVEND_NICE=${RAVEND_NICE:-${NICELEVEL:-0}}
-RAVEND_OPTS="${RAVEND_OPTS:-${RAVEN_OPTS}}"
+SATOD_CONFIGFILE=${SATOD_CONFIGFILE:-/etc/sato/sato.conf}
+SATOD_PIDDIR=${SATOD_PIDDIR:-/var/run/satod}
+SATOD_PIDFILE=${SATOD_PIDFILE:-${SATOD_PIDDIR}/satod.pid}
+SATOD_DATADIR=${SATOD_DATADIR:-${SATOD_DEFAULT_DATADIR}}
+SATOD_USER=${SATOD_USER:-${SATO_USER:-sato}}
+SATOD_GROUP=${SATOD_GROUP:-sato}
+SATOD_BIN=${SATOD_BIN:-/usr/bin/satod}
+SATOD_NICE=${SATOD_NICE:-${NICELEVEL:-0}}
+SATOD_OPTS="${SATOD_OPTS:-${SATO_OPTS}}"
 
 name="Sato Core Daemon"
 description="Sato cryptocurrency P2P network daemon"
 
 command="/usr/bin/satod"
-command_args="-pid=\"${RAVEND_PIDFILE}\" \
-		-conf=\"${RAVEND_CONFIGFILE}\" \
-		-datadir=\"${RAVEND_DATADIR}\" \
+command_args="-pid=\"${SATOD_PIDFILE}\" \
+		-conf=\"${SATOD_CONFIGFILE}\" \
+		-datadir=\"${SATOD_DATADIR}\" \
 		-daemon \
-		${RAVEND_OPTS}"
+		${SATOD_OPTS}"
 
-required_files="${RAVEND_CONFIGFILE}"
-start_stop_daemon_args="-u ${RAVEND_USER} \
-			-N ${RAVEND_NICE} -w 2000"
-pidfile="${RAVEND_PIDFILE}"
+required_files="${SATOD_CONFIGFILE}"
+start_stop_daemon_args="-u ${SATOD_USER} \
+			-N ${SATOD_NICE} -w 2000"
+pidfile="${SATOD_PIDFILE}"
 
 # The retry schedule to use when stopping the daemon. Could be either
 # a timeout in seconds or multiple signal/timeout pairs (like
 # "SIGKILL/180 SIGTERM/300")
-retry="${RAVEND_SIGTERM_TIMEOUT}"
+retry="${SATOD_SIGTERM_TIMEOUT}"
 
 depend() {
 	need localmount net
@@ -50,29 +50,29 @@ start_pre() {
 	checkpath \
 	-d \
 	--mode 0750 \
-	--owner "${RAVEND_USER}:${RAVEND_GROUP}" \
-	"${RAVEND_DATADIR}"
+	--owner "${SATOD_USER}:${SATOD_GROUP}" \
+	"${SATOD_DATADIR}"
 
 	checkpath \
 	-d \
 	--mode 0755 \
-	--owner "${RAVEND_USER}:${RAVEND_GROUP}" \
-	"${RAVEND_PIDDIR}"
+	--owner "${SATOD_USER}:${SATOD_GROUP}" \
+	"${SATOD_PIDDIR}"
 
 	checkpath -f \
-	-o ${RAVEND_USER}:${RAVEND_GROUP} \
+	-o ${SATOD_USER}:${SATOD_GROUP} \
 	-m 0660 \
-	${RAVEND_CONFIGFILE}
+	${SATOD_CONFIGFILE}
 
 	checkconfig || return 1
 }
 
 checkconfig()
 {
-	if ! grep -qs '^rpcpassword=' "${RAVEND_CONFIGFILE}" ; then
+	if ! grep -qs '^rpcpassword=' "${SATOD_CONFIGFILE}" ; then
 		eerror ""
 		eerror "ERROR: You must set a secure rpcpassword to run satod."
-		eerror "The setting must appear in ${RAVEND_CONFIGFILE}"
+		eerror "The setting must appear in ${SATOD_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
 		eerror "and must not be the same as the rpcuser setting."

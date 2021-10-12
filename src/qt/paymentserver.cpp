@@ -47,8 +47,8 @@
 #include <QUrlQuery>
 #endif
 
-const int RAVEN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString RAVEN_IPC_PREFIX("sato:");
+const int SATO_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString SATO_IPC_PREFIX("sato:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
@@ -213,7 +213,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         // network as that would require fetching and parsing the payment request.
         // That means clicking such an URI which contains a testnet payment request
         // will start a mainnet instance and throw a "wrong network" error.
-        if (arg.startsWith(RAVEN_IPC_PREFIX, Qt::CaseInsensitive)) // sato: URI
+        if (arg.startsWith(SATO_IPC_PREFIX, Qt::CaseInsensitive)) // sato: URI
         {
             savedPaymentRequests.append(arg);
 
@@ -271,7 +271,7 @@ bool PaymentServer::ipcSendCommandLine()
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(RAVEN_IPC_CONNECT_TIMEOUT))
+        if (!socket->waitForConnected(SATO_IPC_CONNECT_TIMEOUT))
         {
             delete socket;
             socket = nullptr;
@@ -286,7 +286,7 @@ bool PaymentServer::ipcSendCommandLine()
 
         socket->write(block);
         socket->flush();
-        socket->waitForBytesWritten(RAVEN_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(SATO_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
 
         delete socket;
@@ -407,7 +407,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith(RAVEN_IPC_PREFIX, Qt::CaseInsensitive)) // sato: URI
+    if (s.startsWith(SATO_IPC_PREFIX, Qt::CaseInsensitive)) // sato: URI
     {
 #if QT_VERSION < 0x050000
         QUrl uri(s);

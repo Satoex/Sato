@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_RAVENAMOUNTFIELD_H
-#define RAVEN_QT_RAVENAMOUNTFIELD_H
+#ifndef SATO_QT_SATOAMOUNTFIELD_H
+#define SATO_QT_SATOAMOUNTFIELD_H
 
 #include "amount.h"
 
@@ -127,4 +127,4 @@ private:
 };
 
 
-#endif // RAVEN_QT_RAVENAMOUNTFIELD_H
+#endif // SATO_QT_SATOAMOUNTFIELD_H

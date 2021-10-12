@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_RECEIVECOINSDIALOG_H
-#define RAVEN_QT_RECEIVECOINSDIALOG_H
+#ifndef SATO_QT_RECEIVECOINSDIALOG_H
+#define SATO_QT_RECEIVECOINSDIALOG_H
 
 #include "guiutil.h"
 
@@ -80,4 +80,4 @@ private Q_SLOTS:
     void copyAmount();
 };
 
-#endif // RAVEN_QT_RECEIVECOINSDIALOG_H
+#endif // SATO_QT_RECEIVECOINSDIALOG_H

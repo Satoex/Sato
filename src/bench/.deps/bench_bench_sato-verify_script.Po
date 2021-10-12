@@ -118,9 +118,9 @@ bench/bench_bench_sato-verify_script.o: bench/verify_script.cpp \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/aligned_buffer.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_map.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp \
- /root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp \
+ /root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp \
  key.h pubkey.h hash.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/iostream \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ostream \
@@ -447,11 +447,11 @@ bench/bench.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp:
 
-/root/satest/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp:
+/root/Sato/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp:
 
 key.h:
 
