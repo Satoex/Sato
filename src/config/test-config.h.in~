@@ -1,8 +1,14 @@
 /* src/config/sato-config.h.in.  Generated from configure.ac by autoheader.  */
 
+<<<<<<< HEAD
 #ifndef SATO_CONFIG_H
 
 #define SATO_CONFIG_H
+=======
+#ifndef RAVEN_CONFIG_H
+
+#define RAVEN_CONFIG_H
+>>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define if building universal (internal helper macro) */
 #undef AC_APPLE_UNIVERSAL_BUILD
@@ -424,4 +430,8 @@
 /* Define for large files, on AIX-style hosts. */
 #undef _LARGE_FILES
 
+<<<<<<< HEAD
 #endif //SATO_CONFIG_H
+=======
+#endif //RAVEN_CONFIG_H
+>>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b

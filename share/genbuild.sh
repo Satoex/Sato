@@ -36,7 +36,11 @@ if [ "${SATO_GENBUILD_NO_GIT}" != "1" -a -e "$(which git 2>/dev/null)" -a "$(git
 
     # otherwise generate suffix from git, i.e. string like "59887e8-dirty"
     SUFFIX=$(git rev-parse --short HEAD)
+<<<<<<< HEAD
     git diff-index --quiet HEAD -- || SUFFIX="$SUFFIX-lion"
+=======
+    git diff-index --quiet HEAD -- || SUFFIX="$SUFFIX-vulture"
+>>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 fi
 
 if [ -n "$DESC" ]; then

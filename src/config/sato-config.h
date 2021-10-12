@@ -21,7 +21,11 @@
 #define CLIENT_VERSION_MINOR 1
 
 /* Build revision */
+<<<<<<< HEAD
 #define CLIENT_VERSION_REVISION 4
+=======
+#define CLIENT_VERSION_REVISION 3
+>>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Copyright holder(s) before %s replacement */
 #define COPYRIGHT_HOLDERS "The %s developers"
@@ -350,16 +354,24 @@
 #define PACKAGE_NAME "Sato Core"
 
 /* Define to the full name and version of this package. */
+<<<<<<< HEAD
 #define PACKAGE_STRING "Sato Core 1.1.4"
+=======
+#define PACKAGE_STRING "Sato Core 1.1.3"
+>>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "sato"
 
 /* Define to the home page for this package. */
-#define PACKAGE_URL "https://satoex.com/sato"
+#define PACKAGE_URL "https://satonetwork.com"
 
 /* Define to the version of this package. */
+<<<<<<< HEAD
 #define PACKAGE_VERSION "1.1.4"
+=======
+#define PACKAGE_VERSION "1.1.3"
+>>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
