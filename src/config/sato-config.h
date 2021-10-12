@@ -357,7 +357,7 @@
 <<<<<<< HEAD
 #define PACKAGE_STRING "Sato Core 1.1.4"
 =======
-#define PACKAGE_STRING "Sato Core 1.1.3"
+#define PACKAGE_STRING "Sato Core 1.1.4"
 >>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define to the one symbol short name of this package. */
@@ -370,7 +370,7 @@
 <<<<<<< HEAD
 #define PACKAGE_VERSION "1.1.4"
 =======
-#define PACKAGE_VERSION "1.1.3"
+#define PACKAGE_VERSION "1.1.4"
 >>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define to necessary symbol if this constant uses a non-standard name on
