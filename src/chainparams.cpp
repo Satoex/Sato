@@ -112,7 +112,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 1050000;  //~ 2 yrs at 1 min block time
+        consensus.nSubsidyHalvingInterval = 2100000;  //~ 4 yrs at 1 min block time
         consensus.nBIP34Enabled = true;
         consensus.nBIP65Enabled = true;
         consensus.nBIP66Enabled = true;
@@ -222,7 +222,8 @@ public:
 		    { 188439, uint256S("0x0000000000f80ab282b3cfefa974ec89663f569289ea61d7d1d7ce92ceaf0423")},
 		    { 231687, uint256S("0x0000000004e56363bbf2b9009d95760c917165f5e4c03143c3d3854af3d48a37")},
 		    { 231814, uint256S("0x000000001c65ef30acc43088044eabf8ba23e834fc616abee665a73773b384e2")},
-		    { 261718, uint256S("0x0000000010d94df6cc5b75392fd52c122bd517a909186ded74a39a8493c593d0")}
+		    { 261718, uint256S("0x0000000010d94df6cc5b75392fd52c122bd517a909186ded74a39a8493c593d0")},
+		    { 312950, uint256S("0x000000001478105700a19faf70f3d297b1b74bdf8d021c4632b0aa2e5aa22f48")}
             }
         };
 
