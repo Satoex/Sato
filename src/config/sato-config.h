@@ -22,7 +22,7 @@
 
 /* Build revision */
 <<<<<<< HEAD
-#define CLIENT_VERSION_REVISION 4
+#define CLIENT_VERSION_REVISION 5
 =======
 #define CLIENT_VERSION_REVISION 3
 >>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
@@ -355,9 +355,9 @@
 
 /* Define to the full name and version of this package. */
 <<<<<<< HEAD
-#define PACKAGE_STRING "Sato Core 1.1.4"
+#define PACKAGE_STRING "Sato Core 1.1.5"
 =======
-#define PACKAGE_STRING "Sato Core 1.1.4"
+#define PACKAGE_STRING "Sato Core 1.1.5"
 >>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define to the one symbol short name of this package. */
@@ -368,9 +368,9 @@
 
 /* Define to the version of this package. */
 <<<<<<< HEAD
-#define PACKAGE_VERSION "1.1.4"
+#define PACKAGE_VERSION "1.1.5"
 =======
-#define PACKAGE_VERSION "1.1.4"
+#define PACKAGE_VERSION "1.1.5"
 >>>>>>> d18b0b16c011b1971e40fd66496da76cb73a791b
 
 /* Define to necessary symbol if this constant uses a non-standard name on
